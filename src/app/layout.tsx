@@ -38,6 +38,14 @@ export const metadata: Metadata = {
   publisher: "Denu Nugoryiyi Za Festival Secretariat",
   metadataBase: new URL("https://denunugoryiyiza.gh"),
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/logo-favicon.png", type: "image/png", sizes: "64x64" },
+      { url: "/logo-square.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/logo-square.png", sizes: "512x512", type: "image/png" }],
+    shortcut: ["/logo-favicon.png"],
+  },
   openGraph: {
     title: "Denu Nugoryiyi Za (Zordede Vava) — Premier Cultural Festival of Denu, Ghana",
     description:

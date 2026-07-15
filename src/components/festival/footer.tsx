@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import {
-  Crown,
   Mail,
   Phone,
   MapPin,
@@ -15,6 +14,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { FestivalLogo } from "./festival-logo";
 
 const QUICK_LINKS = [
   { label: "Home", href: "#home" },
@@ -64,11 +64,8 @@ export function Footer() {
           {/* Brand + Newsletter */}
           <div className="lg:col-span-5">
             <div className="flex items-center gap-3">
-              <div className="relative w-14 h-14">
-                <div className="absolute inset-0 rounded-full bg-gradient-gold shadow-gold-glow" />
-                <div className="absolute inset-[3px] rounded-full bg-forest-deep flex items-center justify-center">
-                  <Crown className="w-7 h-7 text-gold" />
-                </div>
+              <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-gold/40 shadow-gold-glow shrink-0">
+                <FestivalLogo variant="icon" size={56} />
               </div>
               <div>
                 <div className="font-serif text-xl font-semibold text-cream">

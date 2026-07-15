@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FestivalLogo } from "./festival-logo";
 
 export function LoadingScreen() {
   const [done, setDone] = useState(false);
@@ -22,7 +23,7 @@ export function LoadingScreen() {
         >
           {/* Animated Kente band backdrop */}
           <div className="absolute inset-0 opacity-20">
-            <div className="absolute -top-1/2 -left-1/4 w-[150%] h-[200%] animate-spin-slow bg-[conic-gradient(from_0deg,#083F22,#E8C15A,#0F5C33,#F4C96D,#C99A38,#083F22)] blur-3xl" />
+            <div className="absolute -top-1/2 -left-1/4 w-[150%] h-[200%] animate-spin-slow bg-[conic-gradient(from_0deg,#003018,#F0A848,#0F5C33,#F0D848,#C98838,#003018)] blur-3xl" />
           </div>
 
           <div className="relative z-10 flex flex-col items-center gap-8">
@@ -33,11 +34,8 @@ export function LoadingScreen() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative"
             >
-              <div className="relative w-28 h-28 rounded-full bg-gradient-gold flex items-center justify-center shadow-gold-glow">
-                <div className="absolute inset-1 rounded-full border-2 border-forest-deep/40" />
-                <span className="font-serif font-bold text-forest-deep text-3xl leading-none">
-                  DN
-                </span>
+              <div className="relative w-28 h-28 rounded-full overflow-hidden ring-4 ring-gold/40 shadow-gold-glow flex items-center justify-center bg-forest">
+                <FestivalLogo variant="icon" size={112} priority />
                 <div className="absolute -inset-2 rounded-full border border-gold/40 animate-glow-pulse" />
               </div>
             </motion.div>

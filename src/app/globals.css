@@ -42,83 +42,83 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Festival brand palette */
-  --color-forest: #083F22;
-  --color-forest-deep: #062E18;
-  --color-forest-light: #0F5C33;
-  --color-gold: #E8C15A;
-  --color-gold-deep: #C99A38;
-  --color-gold-yellow: #F4C96D;
+  /* Festival brand palette — extracted from official Denu Nugoryiyi Za logo */
+  --color-forest: #003018;        /* logo background deep forest green */
+  --color-forest-deep: #001A0C;   /* darker variant for depth */
+  --color-forest-light: #0F5C33;  /* lighter accent for gradients */
+  --color-gold: #F0A848;          /* logo primary warm amber-gold */
+  --color-gold-deep: #C98838;     /* deeper shade for shadows/text */
+  --color-gold-yellow: #F0D848;   /* logo bright highlight yellow */
   --color-cream: #FBF6EA;
 }
 
 :root {
   --radius: 0.75rem;
   --background: #FBF6EA;
-  --foreground: #083F22;
+  --foreground: #003018;
   --card: #FFFFFF;
-  --card-foreground: #083F22;
+  --card-foreground: #003018;
   --popover: #FFFFFF;
-  --popover-foreground: #083F22;
-  --primary: #083F22;
-  --primary-foreground: #F4C96D;
-  --secondary: #F4C96D;
-  --secondary-foreground: #083F22;
+  --popover-foreground: #003018;
+  --primary: #003018;
+  --primary-foreground: #F0D848;
+  --secondary: #F0D848;
+  --secondary-foreground: #003018;
   --muted: #F1E9D2;
   --muted-foreground: #5B6B5E;
-  --accent: #E8C15A;
-  --accent-foreground: #083F22;
+  --accent: #F0A848;
+  --accent-foreground: #003018;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: rgba(8, 63, 34, 0.12);
-  --input: rgba(8, 63, 34, 0.12);
-  --ring: #E8C15A;
-  --chart-1: #083F22;
-  --chart-2: #E8C15A;
-  --chart-3: #F4C96D;
+  --border: rgba(0, 48, 24, 0.12);
+  --input: rgba(0, 48, 24, 0.12);
+  --ring: #F0A848;
+  --chart-1: #003018;
+  --chart-2: #F0A848;
+  --chart-3: #F0D848;
   --chart-4: #0F5C33;
-  --chart-5: #C99A38;
-  --sidebar: #062E18;
-  --sidebar-foreground: #F4C96D;
-  --sidebar-primary: #E8C15A;
-  --sidebar-primary-foreground: #062E18;
+  --chart-5: #C98838;
+  --sidebar: #001A0C;
+  --sidebar-foreground: #F0D848;
+  --sidebar-primary: #F0A848;
+  --sidebar-primary-foreground: #001A0C;
   --sidebar-accent: #0F5C33;
-  --sidebar-accent-foreground: #F4C96D;
-  --sidebar-border: rgba(232, 193, 90, 0.15);
-  --sidebar-ring: #E8C15A;
+  --sidebar-accent-foreground: #F0D848;
+  --sidebar-border: rgba(240, 168, 72, 0.18);
+  --sidebar-ring: #F0A848;
 }
 
 .dark {
-  --background: #062E18;
+  --background: #001A0C;
   --foreground: #FBF6EA;
-  --card: #083F22;
+  --card: #003018;
   --card-foreground: #FBF6EA;
-  --popover: #083F22;
+  --popover: #003018;
   --popover-foreground: #FBF6EA;
-  --primary: #E8C15A;
-  --primary-foreground: #062E18;
+  --primary: #F0A848;
+  --primary-foreground: #001A0C;
   --secondary: #0F5C33;
-  --secondary-foreground: #F4C96D;
+  --secondary-foreground: #F0D848;
   --muted: #0F5C33;
-  --muted-foreground: rgba(244, 201, 109, 0.7);
-  --accent: #E8C15A;
-  --accent-foreground: #062E18;
+  --muted-foreground: rgba(240, 216, 72, 0.7);
+  --accent: #F0A848;
+  --accent-foreground: #001A0C;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(232, 193, 90, 0.18);
-  --input: rgba(232, 193, 90, 0.15);
-  --ring: #E8C15A;
-  --chart-1: #E8C15A;
-  --chart-2: #F4C96D;
+  --border: rgba(240, 168, 72, 0.2);
+  --input: rgba(240, 168, 72, 0.16);
+  --ring: #F0A848;
+  --chart-1: #F0A848;
+  --chart-2: #F0D848;
   --chart-3: #0F5C33;
-  --chart-4: #083F22;
-  --chart-5: #C99A38;
-  --sidebar: #04210F;
-  --sidebar-foreground: #F4C96D;
-  --sidebar-primary: #E8C15A;
-  --sidebar-primary-foreground: #04210F;
+  --chart-4: #003018;
+  --chart-5: #C98838;
+  --sidebar: #00120A;
+  --sidebar-foreground: #F0D848;
+  --sidebar-primary: #F0A848;
+  --sidebar-primary-foreground: #00120A;
   --sidebar-accent: #0F5C33;
-  --sidebar-accent-foreground: #F4C96D;
-  --sidebar-border: rgba(232, 193, 90, 0.15);
-  --sidebar-ring: #E8C15A;
+  --sidebar-accent-foreground: #F0D848;
+  --sidebar-border: rgba(240, 168, 72, 0.18);
+  --sidebar-ring: #F0A848;
 }
 
 @layer base {
@@ -149,64 +149,64 @@
     font-family: var(--font-inter), system-ui, sans-serif;
   }
   .text-gradient-gold {
-    background: linear-gradient(135deg, #F4C96D 0%, #E8C15A 45%, #C99A38 100%);
+    background: linear-gradient(135deg, #F0D848 0%, #F0A848 45%, #C98838 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
   .bg-gradient-gold {
-    background: linear-gradient(135deg, #F4C96D 0%, #E8C15A 50%, #C99A38 100%);
+    background: linear-gradient(135deg, #F0D848 0%, #F0A848 50%, #C98838 100%);
   }
   .bg-gradient-forest {
-    background: linear-gradient(135deg, #0F5C33 0%, #083F22 55%, #062E18 100%);
+    background: linear-gradient(135deg, #0F5C33 0%, #003018 55%, #001A0C 100%);
   }
   .bg-gradient-forest-radial {
-    background: radial-gradient(ellipse at top, #0F5C33 0%, #083F22 50%, #062E18 100%);
+    background: radial-gradient(ellipse at top, #0F5C33 0%, #003018 50%, #001A0C 100%);
   }
   .glass-card {
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px) saturate(160%);
     -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border: 1px solid rgba(232, 193, 90, 0.22);
+    border: 1px solid rgba(240, 168, 72, 0.25);
   }
   .glass-card-light {
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(14px) saturate(160%);
     -webkit-backdrop-filter: blur(14px) saturate(160%);
-    border: 1px solid rgba(8, 63, 34, 0.08);
+    border: 1px solid rgba(0, 48, 24, 0.08);
   }
   .shadow-premium {
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.06) inset,
-      0 10px 30px -12px rgba(8, 46, 24, 0.45),
-      0 30px 60px -30px rgba(8, 46, 24, 0.35);
+      0 10px 30px -12px rgba(0, 26, 12, 0.5),
+      0 30px 60px -30px rgba(0, 26, 12, 0.4);
   }
   .shadow-gold-glow {
     box-shadow:
-      0 0 0 1px rgba(232, 193, 90, 0.35),
-      0 12px 40px -10px rgba(232, 193, 90, 0.45);
+      0 0 0 1px rgba(240, 168, 72, 0.4),
+      0 12px 40px -10px rgba(240, 168, 72, 0.5);
   }
   .text-shadow-soft {
     text-shadow: 0 2px 18px rgba(0, 0, 0, 0.45);
   }
   .border-gold-soft {
-    border-color: rgba(232, 193, 90, 0.35);
+    border-color: rgba(240, 168, 72, 0.35);
   }
 
-  /* Kente-inspired divider */
+  /* Kente-inspired divider — uses brand palette */
   .kente-divider {
     height: 14px;
     background:
       repeating-linear-gradient(
         90deg,
-        #083F22 0 18px,
-        #E8C15A 18px 22px,
+        #003018 0 18px,
+        #F0A848 18px 22px,
         #0F5C33 22px 40px,
-        #F4C96D 40px 44px,
-        #C99A38 44px 48px,
-        #083F22 48px 66px,
-        #F4C96D 66px 70px
+        #F0D848 40px 44px,
+        #C98838 44px 48px,
+        #003018 48px 66px,
+        #F0D848 66px 70px
       );
     background-size: 70px 100%;
   }
@@ -284,7 +284,7 @@
     background: transparent;
   }
   .scrollbar-gold::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #E8C15A, #C99A38);
+    background: linear-gradient(180deg, #F0A848, #C98838);
     border-radius: 999px;
   }
 

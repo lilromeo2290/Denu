@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ChevronRight, Calendar, MapPin, Users, Sparkles } from "lucide-react";
 import { Particles } from "./particles";
+import { FestivalLogo } from "./festival-logo";
 
 const STATS = [
   { icon: Users, label: "Annual Visitors", value: "25K+" },
@@ -36,6 +37,17 @@ export function Hero() {
 
       {/* Floating particles */}
       <Particles count={36} />
+
+      {/* Festival logo watermark — large, faint, top-right */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.12, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.6 }}
+        className="absolute top-24 right-4 sm:right-10 lg:right-16 w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 pointer-events-none"
+        aria-hidden
+      >
+        <FestivalLogo variant="transparent" size={288} className="w-full h-full" />
+      </motion.div>
 
       {/* Content */}
       <div className="relative z-10 w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-24 pb-16">

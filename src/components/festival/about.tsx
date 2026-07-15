@@ -14,6 +14,7 @@ import {
 import { SectionHeading } from "./section-heading";
 import { SectionShell } from "./gold-button";
 import { Reveal, StaggerGroup, staggerItem } from "./reveal";
+import { FestivalLogo } from "./festival-logo";
 
 const VALUES = [
   {
@@ -92,8 +93,8 @@ export function About() {
                 {/* Floating badge */}
                 <div className="absolute bottom-5 left-5 right-5 glass-card rounded-2xl p-5">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-gold flex items-center justify-center shrink-0">
-                      <Crown className="w-6 h-6 text-forest-deep" />
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden ring-2 ring-gold/40 shadow-gold-glow shrink-0 bg-forest">
+                      <FestivalLogo variant="icon" size={56} />
                     </div>
                     <div>
                       <div className="font-serif text-cream text-lg leading-tight">

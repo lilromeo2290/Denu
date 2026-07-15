@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FestivalLogo } from "./festival-logo";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -52,14 +53,9 @@ export function Navbar() {
             className="flex items-center gap-3 group"
             aria-label="Denu Nugoryiyi Za home"
           >
-            <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0">
-              <div className="absolute inset-0 rounded-full bg-gradient-gold shadow-gold-glow group-hover:scale-105 transition-transform duration-300" />
-              <div className="absolute inset-[3px] rounded-full bg-forest-deep flex items-center justify-center">
-                <span className="font-serif font-bold text-gold text-base sm:text-lg">
-                  DN
-                </span>
-              </div>
-              <div className="absolute -inset-1 rounded-full border border-gold/30 animate-glow-pulse opacity-70" />
+            <div className="relative w-11 h-11 sm:w-12 sm:h-12 shrink-0 rounded-full overflow-hidden ring-2 ring-gold/40 shadow-gold-glow group-hover:scale-105 transition-transform duration-300 bg-forest">
+              <FestivalLogo variant="icon" size={48} priority />
+              <div className="absolute -inset-1 rounded-full border border-gold/30 animate-glow-pulse opacity-70 pointer-events-none" />
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-serif text-base sm:text-lg font-semibold text-cream">
