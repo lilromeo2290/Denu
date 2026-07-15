@@ -23,13 +23,15 @@ export function Hero() {
           className="absolute inset-0 animate-slow-zoom bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=2000&q=80')",
+              "url('/hero-festival.jpg')",
           }}
           aria-hidden
         />
-        {/* Multi-layer overlay for legibility + brand tint */}
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/90 via-forest-deep/70 to-forest-deep/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/30 to-transparent" />
+        {/* Multi-layer overlay for legibility + brand tint — heavier because the photo is bright */}
+        <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/92 via-forest-deep/75 to-forest-deep/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/35 to-transparent" />
+        {/* Left-side vignette to make hero text pop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/85 via-forest-deep/30 to-transparent" />
         {/* Gold radial accent */}
         <div className="absolute -top-1/4 -right-1/4 w-[60vw] h-[60vw] rounded-full bg-gold/15 blur-[120px] animate-glow-pulse" />
         <div className="absolute -bottom-1/4 -left-1/4 w-[50vw] h-[50vw] rounded-full bg-forest-light/30 blur-[120px]" />

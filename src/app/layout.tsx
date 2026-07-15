@@ -54,12 +54,21 @@ export const metadata: Metadata = {
     siteName: "Denu Nugoryiyi Za Festival",
     type: "website",
     locale: "en_GH",
+    images: [
+      {
+        url: "/hero-festival.jpg",
+        width: 1920,
+        height: 1080,
+        alt: "Aerial night view of the Denu Nugoryiyi Za Festival with crowds, illuminated tents and stage lights",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Denu Nugoryiyi Za (Zordede Vava)",
     description:
       "Celebrating Heritage • Inspiring Development • Connecting Generations. The premier cultural festival of Denu, Ghana.",
+    images: ["/hero-festival.jpg"],
   },
   robots: {
     index: true,
@@ -97,6 +106,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-festival.jpg"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
