@@ -24,7 +24,7 @@ const QUICK_LINKS = [
   { label: "Media", href: "#gallery" },
   { label: "Tourism", href: "#tourism" },
   { label: "News", href: "#news" },
-  { label: "Privacy Policy", href: "#contact" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const SOCIALS = [
@@ -185,12 +185,17 @@ export function Footer() {
             Some Traditional Area. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#contact" className="text-xs text-cream/60 hover:text-gold transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#contact" className="text-xs text-cream/60 hover:text-gold transition-colors">
-              Terms
-            </a>
+            <p className="text-xs text-cream/60">
+              Powered and Designed by{" "}
+              <a
+                href="https://clipe233eng.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-gold hover:text-gold-yellow transition-colors"
+              >
+                CLIPE233 ENGINEERS
+              </a>
+            </p>
             <button
               onClick={scrollTop}
               aria-label="Back to top"
