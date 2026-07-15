@@ -56,10 +56,16 @@ export const metadata: Metadata = {
     locale: "en_GH",
     images: [
       {
-        url: "/hero-festival.jpg",
-        width: 1920,
-        height: 1080,
-        alt: "Aerial night view of the Denu Nugoryiyi Za Festival with crowds, illuminated tents and stage lights",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Denu Nugoryiyi Za Festival logo — sun, palm trees and traditional branding",
+      },
+      {
+        url: "/og-image-square.jpg",
+        width: 512,
+        height: 512,
+        alt: "Denu Nugoryiyi Za Festival logo",
       },
     ],
   },
@@ -68,7 +74,7 @@ export const metadata: Metadata = {
     title: "Denu Nugoryiyi Za (Zordede Vava)",
     description:
       "Celebrating Heritage • Inspiring Development • Connecting Generations. The premier cultural festival of Denu, Ghana.",
-    images: ["/hero-festival.jpg"],
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -84,6 +90,13 @@ const structuredData = {
   name: "Denu Nugoryiyi Za (Zordede Vava)",
   description:
     "Annual cultural festival of the people of Denu, Volta Region, Ghana, celebrating heritage, unity, community development, tourism, investment, and traditional leadership.",
+  image: [
+    "https://denunugoryiyiza.gh/og-image.jpg",
+    "https://denunugoryiyiza.gh/og-image-square.jpg",
+    "https://denunugoryiyiza.gh/logo-full.png",
+  ],
+  logo: "https://denunugoryiyiza.gh/logo-full.png",
+  url: "https://denunugoryiyiza.gh",
   location: {
     "@type": "Place",
     name: "Denu, Volta Region, Ghana",
@@ -97,6 +110,8 @@ const structuredData = {
   organizer: {
     "@type": "Organization",
     name: "Some Traditional Area",
+    url: "https://denunugoryiyiza.gh",
+    logo: "https://denunugoryiyiza.gh/logo-full.png",
   },
 };
 
@@ -112,6 +127,23 @@ export default function RootLayout({
           href="/hero-festival.jpg"
           fetchPriority="high"
         />
+        {/* Explicit OpenGraph + Twitter meta tags for maximum social scraper compatibility */}
+        <meta property="og:title" content="Denu Nugoryiyi Za (Zordede Vava) — Premier Cultural Festival of Denu, Ghana" />
+        <meta property="og:description" content="Celebrating Heritage • Inspiring Development • Connecting Generations. Discover the grand durbar, cultural heritage, development projects, tourism, and investment opportunities of Denu." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Denu Nugoryiyi Za Festival" />
+        <meta property="og:locale" content="en_GH" />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:image:secure_url" content="/og-image.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Denu Nugoryiyi Za Festival logo — sun, palm trees and traditional branding" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Denu Nugoryiyi Za (Zordede Vava)" />
+        <meta name="twitter:description" content="Celebrating Heritage • Inspiring Development • Connecting Generations. The premier cultural festival of Denu, Ghana." />
+        <meta name="twitter:image" content="/og-image.jpg" />
+        <meta name="twitter:image:alt" content="Denu Nugoryiyi Za Festival logo" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
