@@ -27,11 +27,10 @@ export function Hero() {
           }}
           aria-hidden
         />
-        {/* Multi-layer overlay for legibility + brand tint — heavier because the photo is bright */}
-        <div className="absolute inset-0 bg-gradient-to-br from-forest-deep/92 via-forest-deep/75 to-forest-deep/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/35 to-transparent" />
-        {/* Left-side vignette to make hero text pop */}
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/85 via-forest-deep/30 to-transparent" />
+        {/* Subtle bottom fade for ground/transition into next section */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/15 to-transparent" />
+        {/* Left-side gradient ONLY — keeps text legible while letting the photo show on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/85 via-forest-deep/35 to-transparent" />
         {/* Gold radial accent */}
         <div className="absolute -top-1/4 -right-1/4 w-[60vw] h-[60vw] rounded-full bg-gold/15 blur-[120px] animate-glow-pulse" />
         <div className="absolute -bottom-1/4 -left-1/4 w-[50vw] h-[50vw] rounded-full bg-forest-light/30 blur-[120px]" />
@@ -68,7 +67,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 font-serif font-bold text-5xl sm:text-7xl lg:text-8xl text-cream leading-[0.95] tracking-tight text-shadow-soft"
+            className="mt-6 font-serif font-bold text-5xl sm:text-7xl lg:text-8xl text-cream leading-[0.95] tracking-tight text-shadow-strong"
           >
             Denu
             <br />
@@ -79,7 +78,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.55 }}
-            className="mt-6 text-lg sm:text-xl lg:text-2xl text-cream/85 font-light max-w-2xl leading-relaxed"
+            className="mt-6 text-lg sm:text-xl lg:text-2xl text-cream/95 font-light max-w-2xl leading-relaxed text-shadow-soft"
           >
             Celebrating Heritage{" "}
             <span className="text-gold font-medium">•</span> Inspiring
