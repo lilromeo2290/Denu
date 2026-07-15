@@ -140,7 +140,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <span className="text-cream/75">
-                  Denu Traditional Council, Ketu South Municipality, Volta Region, Ghana
+                  Some Traditional Area, Ketu South Municipality, Volta Region, Ghana
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -182,7 +182,7 @@ export function Footer() {
         <div className="mt-12 pt-6 border-t border-gold/15 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-cream/60 text-center sm:text-left">
             © {new Date().getFullYear()} Denu Nugoryiyi Za Festival Secretariat ·
-            Denu Traditional Council. All rights reserved.
+            Some Traditional Area. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a href="#contact" className="text-xs text-cream/60 hover:text-gold transition-colors">

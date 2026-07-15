@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Grand Durbar",
   ],
   authors: [{ name: "Denu Nugoryiyi Za Festival Secretariat" }],
-  creator: "Denu Traditional Council",
+  creator: "Some Traditional Area",
   publisher: "Denu Nugoryiyi Za Festival Secretariat",
   metadataBase: new URL("https://denunugoryiyiza.gh"),
   alternates: { canonical: "/" },
@@ -87,7 +87,7 @@ const structuredData = {
   },
   organizer: {
     "@type": "Organization",
-    name: "Denu Traditional Council",
+    name: "Some Traditional Area",
   },
 };
 

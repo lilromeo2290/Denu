@@ -54,7 +54,7 @@ const TIERS = [
     color: "from-rose-200 to-rose-400",
     badge: "text-rose-700",
     sponsors: [
-      "Denu Traditional Council",
+      "Some Traditional Area",
       "Ketu South Education Directorate",
       "Diaspora Network Ghana",
       "Volta Development Forum",

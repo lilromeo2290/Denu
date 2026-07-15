@@ -23,7 +23,7 @@ const CONTACTS = [
   {
     icon: MapPin,
     label: "Festival Office",
-    value: "Denu Traditional Council, Ketu South, Volta Region, Ghana",
+    value: "Some Traditional Area, Ketu South, Volta Region, Ghana",
   },
   {
     icon: Phone,
