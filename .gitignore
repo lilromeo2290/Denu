@@ -52,3 +52,14 @@ prompt
 server.log
 # Skills directory
 /skills/
+# === Festival project specifics ===
+# User uploads (logo, photos) — these are source assets, not part of the repo
+/upload/
+
+# Generated screenshots and download artifacts
+/download/
+
+# Scripts that may contain tokens
+/scripts/*-secret*
+.env.local
+.env.production
