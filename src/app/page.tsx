@@ -3,6 +3,7 @@
 import { LoadingScreen } from "@/components/festival/loading-screen";
 import { Navbar } from "@/components/festival/navbar";
 import { Hero } from "@/components/festival/hero";
+import { ExecutiveSummary } from "@/components/festival/executive-summary";
 import { About } from "@/components/festival/about";
 import { Highlights } from "@/components/festival/highlights";
 import { Projects } from "@/components/festival/projects";
@@ -27,6 +28,7 @@ export default function Home() {
       <Navbar />
       <main className="min-h-screen bg-background">
         <Hero />
+        <ExecutiveSummary />
         <About />
         <Highlights />
         <Projects />

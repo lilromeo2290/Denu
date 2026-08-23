@@ -8,6 +8,7 @@ import { FestivalLogo } from "./festival-logo";
 
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
+  { label: "Executive Summary", href: "#executive-summary" },
   { label: "About", href: "#about" },
   { label: "Highlights", href: "#highlights" },
   { label: "Projects", href: "#projects" },
