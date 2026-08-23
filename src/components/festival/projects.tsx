@@ -12,6 +12,20 @@ import {
   Leaf,
   HandCoins,
   ArrowUpRight,
+  Library,
+  GraduationCap,
+  Stethoscope,
+  Building2,
+  MapPin,
+  Users,
+  Network,
+  Globe2,
+  Handshake,
+  TrendingUp,
+  Sparkles,
+  Target,
+  Award,
+  ChevronRight,
 } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import { SectionShell } from "./gold-button";
@@ -114,6 +128,67 @@ const STATUS_STYLES: Record<string, string> = {
   Planned: "bg-blue-400/15 text-blue-300 border-blue-400/30",
   Ongoing: "bg-amber-400/15 text-amber-300 border-amber-400/30",
 };
+
+const LEGACY_PROJECTS = [
+  {
+    icon: Library,
+    title: "Community Library",
+    text: "Construction or renovation of a community library to serve students and residents of Denu.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Scholarship Scheme",
+    text: "Scholarship Scheme for brilliant but needy students to access quality education.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Community Health Outreach",
+    text: "Community Health Outreach Programme bringing free medical care to residents.",
+  },
+  {
+    icon: Building2,
+    title: "Renovation of Public Facilities",
+    text: "Renovation of selected public facilities to improve service delivery and dignity.",
+  },
+  {
+    icon: MapPin,
+    title: "Street Signs & Community Monuments",
+    text: "Installation of street signs or community monuments commemorating the anniversary.",
+  },
+];
+
+const EXPECTED_OUTCOMES = [
+  {
+    icon: Users,
+    title: "Increased Unity & Participation",
+    text: "Increase community unity and participation across all generations.",
+  },
+  {
+    icon: Network,
+    title: "Stronger Relationships",
+    text: "Strengthen relationships among residents and the diaspora.",
+  },
+  {
+    icon: Globe2,
+    title: "Cultural Identity Promotion",
+    text: "Promote Denu's cultural identity nationally and internationally.",
+  },
+  {
+    icon: Handshake,
+    title: "Development Partnerships",
+    text: "Attract development partnerships and investment to Denu.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Tourism & Business Growth",
+    text: "Increase tourism and local business activities in the community.",
+  },
+  {
+    icon: HandCoins,
+    title: "Funds for Sustainable Projects",
+    text: "Raise funds for sustainable community development projects.",
+  },
+];
 
 export function Projects() {
   return (
@@ -235,6 +310,160 @@ export function Projects() {
             ))}
           </div>
         </Reveal>
+
+        {/* Proposed Legacy Projects */}
+        <div className="mt-24">
+          <Reveal>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
+                <Award className="w-3.5 h-3.5 text-gold" />
+                10th Anniversary Legacy
+              </div>
+              <h3 className="mt-5 font-serif text-3xl sm:text-4xl text-forest font-bold">
+                Proposed Legacy Projects
+              </h3>
+              <p className="mt-4 text-forest/70 max-w-2xl mx-auto text-sm sm:text-base">
+                To ensure the anniversary leaves a lasting impact, the Planning
+                Committee may undertake one or more of the following legacy
+                initiatives for the people of Denu.
+              </p>
+            </div>
+          </Reveal>
+
+          <StaggerGroup className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {LEGACY_PROJECTS.map((p, i) => (
+              <motion.div
+                key={p.title}
+                variants={staggerItem}
+                className="group relative rounded-2xl p-6 bg-white border border-forest/10 hover:border-gold/40 hover:shadow-premium transition-all duration-500 overflow-hidden"
+              >
+                <div className="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-gold/0 group-hover:bg-gold/15 blur-2xl transition-all duration-500" />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-forest text-gold flex items-center justify-center shadow-premium group-hover:scale-110 transition-transform">
+                      <p.icon className="w-6 h-6" />
+                    </div>
+                    <span className="font-serif text-3xl text-forest/10 font-bold group-hover:text-gold/25 transition-colors">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h5 className="font-serif text-base sm:text-lg text-forest font-semibold leading-tight">
+                    {p.title}
+                  </h5>
+                  <p className="mt-2 text-sm text-forest/70 leading-relaxed">
+                    {p.text}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Call-to-action card */}
+            <motion.div
+              variants={staggerItem}
+              className="group relative rounded-2xl p-6 bg-gradient-forest text-cream border border-gold/20 hover:border-gold/50 transition-all duration-500 overflow-hidden flex flex-col justify-center items-center text-center"
+            >
+              <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-gold/15 blur-2xl" />
+              <div className="relative">
+                <div className="w-12 h-12 mx-auto rounded-xl bg-gradient-gold text-forest-deep flex items-center justify-center shadow-gold-glow mb-3">
+                  <HandCoins className="w-6 h-6" />
+                </div>
+                <h5 className="font-serif text-lg text-cream font-semibold">
+                  Support a Legacy
+                </h5>
+                <p className="mt-2 text-xs text-cream/70 leading-relaxed">
+                  Partner with us to fund a lasting legacy project for Denu.
+                </p>
+                <a
+                  href="#sponsorship"
+                  className="mt-4 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-gradient-gold text-forest font-semibold uppercase tracking-wide text-xs shadow-gold-glow hover:scale-105 transition-transform"
+                >
+                  Become a Sponsor
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </motion.div>
+          </StaggerGroup>
+        </div>
+
+        {/* Expected Outcomes */}
+        <div className="mt-24">
+          <Reveal>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
+                <Target className="w-3.5 h-3.5 text-gold" />
+                Our Anticipated Impact
+              </div>
+              <h3 className="mt-5 font-serif text-3xl sm:text-4xl text-forest font-bold">
+                Expected Outcomes
+              </h3>
+              <p className="mt-4 text-forest/70 max-w-2xl mx-auto text-sm sm:text-base">
+                The successful implementation of the anniversary celebration is
+                expected to deliver lasting social, cultural and economic
+                benefits for Denu and beyond.
+              </p>
+            </div>
+          </Reveal>
+
+          <StaggerGroup className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {EXPECTED_OUTCOMES.map((o, i) => (
+              <motion.div
+                key={o.title}
+                variants={staggerItem}
+                className="group relative rounded-2xl p-6 bg-gradient-forest text-cream border border-gold/15 hover:border-gold/40 hover:shadow-premium transition-all duration-500 overflow-hidden"
+              >
+                <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-gold/10 group-hover:bg-gold/20 blur-2xl transition-all duration-500" />
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-gold text-forest-deep flex items-center justify-center shadow-gold-glow group-hover:scale-110 transition-transform">
+                      <o.icon className="w-6 h-6" />
+                    </div>
+                    <span className="font-serif text-3xl text-gold/20 font-bold group-hover:text-gold/40 transition-colors">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h5 className="font-serif text-base sm:text-lg text-cream font-semibold leading-tight">
+                    {o.title}
+                  </h5>
+                  <p className="mt-2 text-sm text-cream/70 leading-relaxed">
+                    {o.text}
+                  </p>
+                  {/* Gold accent line */}
+                  <div className="mt-4 h-px bg-gradient-to-r from-gold/60 via-gold/20 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                </div>
+              </motion.div>
+            ))}
+          </StaggerGroup>
+
+          {/* Closing CTA */}
+          <Reveal delay={0.15}>
+            <div className="mt-14 text-center">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold/15 text-gold-deep text-xs font-semibold uppercase tracking-[0.2em] border border-gold/25 mb-5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Be Part of the Legacy
+              </div>
+              <p className="text-forest/70 text-sm sm:text-base max-w-2xl mx-auto mb-6">
+                Every contribution — sponsorship, donation, partnership or
+                volunteer time — helps turn these outcomes into reality for
+                Denu.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a
+                  href="#sponsorship"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-gold text-forest font-semibold uppercase tracking-wide text-sm shadow-gold-glow hover:scale-105 transition-transform"
+                >
+                  Support the Projects
+                  <ChevronRight className="w-4 h-4" />
+                </a>
+                <a
+                  href="#register"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border-2 border-forest/15 text-forest hover:border-gold hover:text-gold-deep font-semibold uppercase tracking-wide text-sm transition-colors"
+                >
+                  Get Involved
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </SectionShell>
   );
