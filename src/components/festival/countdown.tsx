@@ -13,8 +13,8 @@ interface TimeLeft {
   seconds: number;
 }
 
-// Festival target date: 26 November 2026, 09:00 GMT
-const TARGET = new Date("2026-11-26T09:00:00Z").getTime();
+// Festival target date: 26 November 2027, 09:00 GMT (10th Anniversary Edition)
+const TARGET = new Date("2027-11-26T09:00:00Z").getTime();
 
 function calc(): TimeLeft {
   const diff = Math.max(0, TARGET - Date.now());
@@ -115,7 +115,7 @@ export function Countdown() {
 
         <Reveal delay={0.3}>
           <p className="mt-10 text-cream/70 text-sm sm:text-base">
-            <span className="text-gold font-semibold">26 – 29 November 2026</span>  ·  Denu, Volta Region, Ghana
+            <span className="text-gold font-semibold">26 – 29 November 2027</span>  ·  10th Anniversary · Denu, Volta Region, Ghana
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a

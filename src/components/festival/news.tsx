@@ -19,7 +19,7 @@ interface Article {
 
 const ARTICLES: Article[] = [
   {
-    title: "Denu Nugoryiyi Za 2025 to host largest ever Grand Durbar",
+    title: "Denu Nugoryiyi Zà 2027 to host largest ever Grand Durbar for 10th Anniversary",
     excerpt:
       "The festival committee has confirmed that this year's Grand Durbar will welcome over forty chiefs and queen mothers from across the Volta Region and beyond, in what promises to be the most spectacular edition of the festival to date.",
     category: "Festival News",

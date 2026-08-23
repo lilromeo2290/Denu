@@ -19,7 +19,7 @@ interface Slot {
 const SCHEDULE: Record<Exclude<Day, "all">, { title: string; date: string; slots: Slot[] }> = {
   day1: {
     title: "Day One — Opening & Cultural Awakening",
-    date: "Thursday, 26 November",
+    date: "Friday, 26 November 2027",
     slots: [
       { time: "07:00", title: "Sunrise Beach Prayer & Libation", venue: "Denu Beach", desc: "Pouring of libation and interfaith prayers to open the festival." },
       { time: "10:00", title: "Grand Opening Ceremony", venue: "Denu Festival Grounds", desc: "Address by the Paramount Chief, municipal executives and the festival planning committee." },
@@ -30,7 +30,7 @@ const SCHEDULE: Record<Exclude<Day, "all">, { title: string; date: string; slots
   },
   day2: {
     title: "Day Two — Heritage & Knowledge",
-    date: "Friday, 27 November",
+    date: "Saturday, 27 November 2027",
     slots: [
       { time: "08:00", title: "Educational Symposium", venue: "Denu Community SHS", desc: "Symposium on Ewe heritage, climate action and civic responsibility." },
       { time: "11:00", title: "Women in Trade Exhibition", venue: "Market Square", desc: "Showcase of women entrepreneurs, micro-grant recipients and artisans." },
@@ -41,7 +41,7 @@ const SCHEDULE: Record<Exclude<Day, "all">, { title: string; date: string; slots
   },
   day3: {
     title: "Day Three — Sport, Service & Sound",
-    date: "Saturday, 28 November",
+    date: "Sunday, 28 November 2027",
     slots: [
       { time: "08:00", title: "Football Gala — Quarter & Semi Finals", venue: "Denu Town Park", desc: "Inter-clan football tournament for the coveted Nugoryiyi Za Cup." },
       { time: "10:00", title: "Beach Activities & Family Day", venue: "Denu Beach", desc: "Beach sports, food fair, kids zone and live DJ sets by the ocean." },
@@ -52,7 +52,7 @@ const SCHEDULE: Record<Exclude<Day, "all">, { title: string; date: string; slots
   },
   finale: {
     title: "Grand Finale — The Durbar of Chiefs",
-    date: "Sunday, 29 November",
+    date: "Monday, 29 November 2027",
     slots: [
       { time: "09:00", title: "Thanksgiving Service", venue: "Denu Community Church", desc: "Interdenominational service of thanksgiving." },
       { time: "12:00", title: "Grand Durbar of Chiefs & Queen Mothers", venue: "Durbar Grounds", desc: "The spiritual climax — chiefs and queen mothers in full regalia, in the presence of the people." },
