@@ -12,6 +12,15 @@ import {
   Radio,
   Award,
   Quote,
+  Eye,
+  Compass,
+  Handshake,
+  ShieldCheck,
+  Globe2,
+  Gem,
+  Leaf,
+  Heart,
+  HandCoins,
 } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import { SectionShell } from "./gold-button";
@@ -73,26 +82,56 @@ const MEDIA_OUTLETS = [
   { name: "Leading Media", desc: "Multiple outlets" },
 ];
 
-const VALUES = [
-  {
-    icon: HeartHandshake,
-    title: "Peace & Unity",
-    text: "Bringing together traditional leaders, youth, families and community associations on one common platform.",
-  },
+const CORE_VALUES = [
   {
     icon: Users,
-    title: "Diaspora Homecoming",
-    text: "Uniting sons and daughters of Denu at home and across the diaspora in shared celebration.",
+    title: "Unity",
+    text: "We believe in bringing people together across generations, backgrounds and geographical boundaries to build a stronger and more connected Denu.",
   },
   {
-    icon: HandHeart,
-    title: "Sustainable Development",
-    text: "Mobilizing collective efforts and partnerships towards the growth of the community.",
+    icon: HeartHandshake,
+    title: "Peace",
+    text: "We promote harmony, mutual respect, dialogue and peaceful coexistence within the community and beyond.",
   },
   {
     icon: BookOpen,
-    title: "Heritage Preservation",
-    text: "Safeguarding the cultural heritage, values and identity of the people of Denu.",
+    title: "Cultural Heritage",
+    text: "We are committed to preserving, celebrating and passing on the rich traditions, customs, language and history of Denu to future generations.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Community Development",
+    text: "We champion initiatives that improve the social, economic, educational and infrastructural development of Denu.",
+  },
+  {
+    icon: HandHeart,
+    title: "Service",
+    text: "We encourage volunteerism, selflessness and active participation in initiatives that benefit the community.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Integrity",
+    text: "We uphold transparency, accountability, honesty and ethical leadership in all our activities and partnerships.",
+  },
+  {
+    icon: Globe2,
+    title: "Inclusiveness",
+    text: "We welcome and celebrate people of all cultures, faiths, ages and backgrounds, fostering a sense of belonging for everyone.",
+  },
+  {
+    icon: Gem,
+    title: "Excellence",
+    text: "We strive for the highest standards in planning, organization, hospitality and delivery of every edition of Denu Nugoryiyi Zà.",
+  },
+  {
+    icon: Handshake,
+    title: "Partnership",
+    text: "We value collaboration with government, corporate organizations, development partners and the diaspora to achieve shared goals.",
+  },
+  {
+    icon: Leaf,
+    title: "Sustainability",
+    text: "We are committed to creating lasting social, cultural, economic and environmental impact that benefits both present and future generations.",
   },
 ];
 
@@ -377,19 +416,102 @@ export function About() {
           </div>
         </Reveal>
 
-        {/* Values grid */}
-        <div className="mt-20">
+        {/* Vision & Mission */}
+        <div className="mt-24">
           <Reveal>
-            <div className="flex items-center justify-center gap-2 mb-10">
-              <Sparkles className="w-4 h-4 text-gold" />
-              <span className="text-xs uppercase tracking-[0.3em] text-forest/60 font-semibold">
-                Values We Celebrate
-              </span>
-              <Sparkles className="w-4 h-4 text-gold" />
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
+                <Compass className="w-3.5 h-3.5 text-gold" />
+                Our Direction
+              </div>
+              <h3 className="mt-5 font-serif text-3xl sm:text-4xl text-forest font-bold">
+                Vision & Mission
+              </h3>
             </div>
           </Reveal>
-          <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {VALUES.map((v) => (
+
+          <div className="mt-12 grid lg:grid-cols-2 gap-6">
+            {/* Vision */}
+            <Reveal>
+              <div className="relative h-full rounded-3xl bg-gradient-forest p-8 sm:p-9 text-cream shadow-premium overflow-hidden">
+                <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-gold/15 blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-gold text-forest-deep flex items-center justify-center shadow-gold-glow">
+                      <Eye className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-[0.2em] text-gold font-bold">
+                        Vision Statement
+                      </div>
+                      <h4 className="font-serif text-xl text-cream font-semibold">
+                        Our Vision
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-cream/85 leading-relaxed text-base sm:text-lg">
+                    To be Ghana&apos;s leading community homecoming and cultural
+                    festival, inspiring unity, preserving heritage, promoting
+                    peace and driving sustainable development for Denu and
+                    future generations.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Mission */}
+            <Reveal delay={0.1}>
+              <div className="relative h-full rounded-3xl bg-white p-8 sm:p-9 text-forest shadow-premium border border-forest/8 overflow-hidden">
+                <div className="absolute -bottom-12 -left-12 w-44 h-44 rounded-full bg-gold/10 blur-3xl" />
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-forest text-gold flex items-center justify-center shadow-premium">
+                      <Compass className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-[0.2em] text-gold-deep font-bold">
+                        Mission Statement
+                      </div>
+                      <h4 className="font-serif text-xl text-forest font-semibold">
+                        Our Mission
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-forest/80 leading-relaxed text-sm sm:text-base">
+                    To unite the people of Denu and friends of the community
+                    through an annual Easter homecoming that celebrates our
+                    rich cultural heritage, fosters peace and social cohesion,
+                    strengthens community identity, promotes tourism and
+                    economic opportunities, mobilizes resources for sustainable
+                    development, and inspires collective responsibility towards
+                    the progress of Denu.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+
+        {/* Core Values — 10 cards */}
+        <div className="mt-24">
+          <Reveal>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
+                <Heart className="w-3.5 h-3.5 text-gold" />
+                Our Foundation
+              </div>
+              <h3 className="mt-5 font-serif text-3xl sm:text-4xl text-forest font-bold">
+                Core Values
+              </h3>
+              <p className="mt-4 text-forest/70 max-w-2xl mx-auto text-sm sm:text-base">
+                Ten principles that guide every decision, every partnership and
+                every edition of Denu Nugoryiyi Zà.
+              </p>
+            </div>
+          </Reveal>
+
+          <StaggerGroup className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-5">
+            {CORE_VALUES.map((v, i) => (
               <motion.div
                 key={v.title}
                 variants={staggerItem}
@@ -397,13 +519,18 @@ export function About() {
               >
                 <div className="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-gold/0 group-hover:bg-gold/15 blur-2xl transition-all duration-500" />
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-gold/15 text-forest flex items-center justify-center group-hover:bg-gradient-gold group-hover:text-forest-deep transition-all">
-                    <v.icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gold/15 text-forest flex items-center justify-center group-hover:bg-gradient-gold group-hover:text-forest-deep transition-all">
+                      <v.icon className="w-6 h-6" />
+                    </div>
+                    <span className="font-serif text-3xl text-forest/15 font-bold group-hover:text-gold/30 transition-colors">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <h5 className="mt-4 font-serif text-lg text-forest font-semibold">
+                  <h5 className="font-serif text-base sm:text-lg text-forest font-semibold">
                     {v.title}
                   </h5>
-                  <p className="mt-2 text-sm text-forest/70 leading-relaxed">
+                  <p className="mt-2 text-xs sm:text-sm text-forest/70 leading-relaxed">
                     {v.text}
                   </p>
                 </div>
