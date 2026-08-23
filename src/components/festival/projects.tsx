@@ -165,7 +165,7 @@ export function Projects() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Development Projects"
+          eyebrow="Proposed Legacy Projects"
           title="Celebration that builds the community"
           description="Every festival is paired with lasting development. These projects — funded by sponsors, partners and the generosity of the diaspora — are transforming Denu into a model coastal community."
         />
