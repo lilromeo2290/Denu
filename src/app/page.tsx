@@ -6,6 +6,7 @@ import { Hero } from "@/components/festival/hero";
 import { ExecutiveSummary } from "@/components/festival/executive-summary";
 import { About } from "@/components/festival/about";
 import { Highlights } from "@/components/festival/highlights";
+import { Roadmap } from "@/components/festival/roadmap";
 import { Projects } from "@/components/festival/projects";
 import { Heritage } from "@/components/festival/heritage";
 import { Tourism } from "@/components/festival/tourism";
@@ -31,6 +32,7 @@ export default function Home() {
         <ExecutiveSummary />
         <About />
         <Highlights />
+        <Roadmap />
         <Projects />
         <Heritage />
         <Tourism />
