@@ -63,3 +63,10 @@ server.log
 /scripts/*-secret*
 .env.local
 .env.production
+
+# Vercel token (NEVER commit)
+.vercel/token
+~/.vercel/
+
+# Vercel project link (local only)
+.vercel/

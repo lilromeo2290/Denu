@@ -1,18 +1,22 @@
-# GitHub Auto-Sync — Denu Nugoryiyi Za Festival
+# GitHub Auto-Sync + Vercel Auto-Deploy — Denu Nugoryiyi Za Festival
 
 This folder contains scripts that automatically commit and push changes from
-`/home/z/my-project` to the GitHub repository at
-**https://github.com/lilromeo2290/Denu.git** every 5 minutes.
+`/home/z/my-project` to GitHub AND deploy to Vercel production every 5 minutes.
+
+## Live site
+
+**Production URL:** https://my-project-chi-peach-24.vercel.app
 
 ## Files
 
 | File                  | Purpose                                                              |
 | --------------------- | -------------------------------------------------------------------- |
-| `sync-github.sh`      | One-shot sync — stages, commits (if needed), and pushes to origin.   |
+| `sync-github.sh`      | One-shot sync — stages, commits, pushes to GitHub, then deploys to Vercel. |
 | `sync-daemon.sh`      | Background daemon that calls `sync-github.sh` every 5 minutes.       |
-| `sync-control.sh`     | Friendly control script: `status` / `start` / `stop` / `restart` / `now` / `log`. |
-| `github-sync.log`     | Worklog of every sync run (auto-rotates when it exceeds 2000 lines). |
-| `sync-daemon.log`     | Daemon lifecycle log (start/stop/sleep messages).                    |
+| `sync-control.sh`     | Friendly control script: `status` / `start` / `stop` / `restart` / `now` / `log` / `deploy`. |
+| `deploy-vercel.sh`    | Standalone Vercel production deploy (reads token from `~/.vercel/token`). |
+| `github-sync.log`     | Worklog of every sync + deploy run (auto-rotates when > 2000 lines). |
+| `vercel-deploy.log`   | Vercel-specific deploy log.                                          |
 
 ## Quick commands
 
@@ -20,8 +24,11 @@ This folder contains scripts that automatically commit and push changes from
 # Check daemon + repo status
 ./sync-control.sh status
 
-# Run an immediate sync (don't wait for the 5-minute cycle)
+# Run an immediate GitHub sync + Vercel deploy
 ./sync-control.sh now
+
+# Deploy to Vercel only (skip GitHub)
+./sync-control.sh deploy
 
 # Stop / start / restart the background daemon
 ./sync-control.sh stop
@@ -39,29 +46,30 @@ This folder contains scripts that automatically commit and push changes from
 2. Every 5 minutes it calls `sync-github.sh`, which:
    - `git add -A` — stages everything not gitignored
    - If there are staged changes, commits with a descriptive message
-     (`auto-sync: <shortstat>` + sample file list + timestamp)
    - `git fetch origin main` to refresh remote refs
    - `git push origin main` if local is ahead
    - `git pull --rebase` if local is behind (handles edits made directly on GitHub)
+   - **After a successful push, automatically calls `deploy-vercel.sh`** to push the
+     new code to Vercel production
 3. Every action is logged to `github-sync.log` with UTC timestamps.
 
 ## Authentication
 
-- Credentials are stored in `~/.git-credentials` (chmod 600) using git's
-  built-in `credential.helper = store`.
-- The token is **never** embedded in the remote URL, so `git remote -v` stays
-  clean and the token is not visible in process listings.
+- **GitHub** credentials stored in `~/.git-credentials` (chmod 600) using git's
+  `credential.helper = store`. The token is **never** embedded in the remote URL.
+- **Vercel** token stored in `~/.vercel/token` (chmod 600). The deploy script reads
+  from this file — never hardcoded.
 
 ## Security note
 
-The GitHub Personal Access Token used to set this up was shared in plain text
-during the initial setup chat. **It should be revoked and regenerated at
-https://github.com/settings/tokens** after this session. To update the stored
-credentials, edit `~/.git-credentials` and replace the old token with the new
-one in this format:
+Both the GitHub Personal Access Token and Vercel token were shared in plain text
+during the initial setup chat. **They should both be revoked and regenerated:**
+- GitHub: https://github.com/settings/tokens
+- Vercel: https://vercel.com/account/tokens
 
-```
-https://lilromeo2290:<NEW_TOKEN>@github.com
-```
+To update stored credentials:
+- GitHub: edit `~/.git-credentials` and replace the token in
+  `https://lilromeo2290:<TOKEN>@github.com`
+- Vercel: edit `~/.vercel/token` with the new token
 
 Then restart the daemon with `./sync-control.sh restart`.

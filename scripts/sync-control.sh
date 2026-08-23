@@ -94,8 +94,13 @@ case "${1:-status}" in
     tail -f "$WORKLOG"
     ;;
 
+  deploy)
+    echo "Deploying to Vercel production…"
+    "$PROJECT_DIR/scripts/deploy-vercel.sh"
+    ;;
+
   *)
-    echo "Usage: $0 {status|start|stop|restart|now|log}"
+    echo "Usage: $0 {status|start|stop|restart|now|log|deploy}"
     exit 1
     ;;
 esac
