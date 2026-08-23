@@ -21,6 +21,13 @@ import {
   Leaf,
   Heart,
   HandCoins,
+  Target,
+  CalendarHeart,
+  Network,
+  MapPin,
+  Trophy,
+  Sprout,
+  Rocket,
 } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import { SectionShell } from "./gold-button";
@@ -80,6 +87,49 @@ const MEDIA_OUTLETS = [
   { name: "Original TV", desc: "Regional television" },
   { name: "Original FM", desc: "Radio broadcast partner" },
   { name: "Leading Media", desc: "Multiple outlets" },
+];
+
+const OBJECTIVES = [
+  {
+    icon: Award,
+    title: "A Decade of Peace & Unity",
+    text: "Celebrate ten years of promoting peace and unity among the people of Denu.",
+  },
+  {
+    icon: CalendarHeart,
+    title: "Reconnect with Heritage",
+    text: "Reconnect sons and daughters of Denu with their cultural heritage and traditions.",
+  },
+  {
+    icon: Network,
+    title: "Strengthen Relationships",
+    text: "Strengthen relationships among residents, the diaspora and development partners.",
+  },
+  {
+    icon: Users,
+    title: "Community Participation",
+    text: "Promote community participation in local development initiatives.",
+  },
+  {
+    icon: MapPin,
+    title: "Showcase Culture & Tourism",
+    text: "Showcase the rich culture, history and tourism potential of Denu.",
+  },
+  {
+    icon: Trophy,
+    title: "Recognize Contributors",
+    text: "Recognize individuals and organizations that have contributed significantly to the growth of Nugoryiyi Za and the development of Denu.",
+  },
+  {
+    icon: Sprout,
+    title: "Mobilize Resources",
+    text: "Mobilize resources towards sustainable community development projects.",
+  },
+  {
+    icon: Rocket,
+    title: "Inspire the Youth",
+    text: "Inspire the younger generation to embrace leadership, volunteerism and cultural values.",
+  },
 ];
 
 const CORE_VALUES = [
@@ -490,6 +540,56 @@ export function About() {
               </div>
             </Reveal>
           </div>
+        </div>
+
+        {/* Festival Objectives */}
+        <div className="mt-24">
+          <Reveal>
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
+                <Target className="w-3.5 h-3.5 text-gold" />
+                Our Purpose
+              </div>
+              <h3 className="mt-5 font-serif text-3xl sm:text-4xl text-forest font-bold">
+                Objectives of the Celebration
+              </h3>
+              <p className="mt-4 text-forest/70 max-w-2xl mx-auto text-sm sm:text-base">
+                The 10th Anniversary celebration seeks to achieve eight
+                interconnected goals that honor the past and shape the future of
+                Denu.
+              </p>
+            </div>
+          </Reveal>
+
+          <StaggerGroup className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {OBJECTIVES.map((o, i) => (
+              <motion.div
+                key={o.title}
+                variants={staggerItem}
+                className="group relative rounded-2xl p-6 bg-white border border-forest/10 hover:border-gold/40 hover:shadow-premium transition-all duration-500 overflow-hidden flex flex-col"
+              >
+                <div className="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-gold/0 group-hover:bg-gold/15 blur-2xl transition-all duration-500" />
+                <div className="relative flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-forest text-gold flex items-center justify-center shadow-premium group-hover:scale-110 transition-transform">
+                      <o.icon className="w-6 h-6" />
+                    </div>
+                    <span className="font-serif text-4xl text-forest/10 font-bold group-hover:text-gold/25 transition-colors">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  <h5 className="font-serif text-base sm:text-lg text-forest font-semibold leading-tight">
+                    {o.title}
+                  </h5>
+                  <p className="mt-2 text-xs sm:text-sm text-forest/70 leading-relaxed flex-1">
+                    {o.text}
+                  </p>
+                  {/* Gold accent line at bottom */}
+                  <div className="mt-4 h-px bg-gradient-to-r from-gold/60 via-gold/20 to-transparent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
+                </div>
+              </motion.div>
+            ))}
+          </StaggerGroup>
         </div>
 
         {/* Core Values — 10 cards */}
