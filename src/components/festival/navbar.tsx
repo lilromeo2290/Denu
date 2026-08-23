@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "Executive Summary", href: "#executive-summary" },
   { label: "About", href: "#about" },
-  { label: "Highlights", href: "#highlights" },
+  { label: "Road Map", href: "#roadmap" },
   { label: "Projects", href: "#projects" },
   { label: "Heritage", href: "#heritage" },
   { label: "Visit Denu", href: "#tourism" },
