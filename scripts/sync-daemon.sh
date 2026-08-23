@@ -2,17 +2,18 @@
 # =============================================================================
 # Denu Nugoryiyi Za Festival — GitHub Sync Daemon (background watcher)
 # -----------------------------------------------------------------------------
-# Runs in the background, executing sync-github.sh every 5 minutes.
-# Started via nohup since crontab/systemd aren't available in this sandbox.
+# Runs in the background, executing sync-github.sh every 2 minutes.
+# Started via setsid since crontab/systemd aren't available in this sandbox.
+# Every cycle: commits local changes, pushes to GitHub, AND deploys to Vercel.
 #
-# Start:   nohup /home/z/my-project/scripts/sync-daemon.sh &
+# Start:   setsid bash /home/z/my-project/scripts/sync-daemon.sh &
 # Stop:    pkill -f sync-daemon.sh
 # Status:  tail -f /home/z/my-project/scripts/github-sync.log
 # =============================================================================
 
 set -euo pipefail
 
-INTERVAL_SECONDS=300   # 5 minutes — minimum allowed interval
+INTERVAL_SECONDS=120   # 2 minutes — fast feedback for every update
 SYNC_SCRIPT="/home/z/my-project/scripts/sync-github.sh"
 DAEMON_LOG="/home/z/my-project/scripts/sync-daemon.log"
 PIDFILE="/home/z/my-project/scripts/sync-daemon.pid"
