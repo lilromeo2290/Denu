@@ -166,156 +166,37 @@ export function Projects() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Proposed Legacy Projects"
-          title="Celebration that builds the community"
-          description="Every festival is paired with lasting development. These projects — funded by sponsors, partners and the generosity of the diaspora — are transforming Denu into a model coastal community."
+          title="Proposed Legacy Projects"
+          description="To ensure the anniversary leaves a lasting impact, the Planning Committee may undertake one or more of the following:"
         />
 
-        <StaggerGroup className="mt-16 grid md:grid-cols-2 gap-6 lg:gap-8">
-          {PROJECTS.map((p) => (
-            <motion.article
+        <StaggerGroup className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {LEGACY_PROJECTS.map((p, i) => (
+            <motion.div
               key={p.title}
               variants={staggerItem}
-              className="group relative rounded-3xl bg-white border border-forest/8 overflow-hidden shadow-[0_10px_30px_-15px_rgba(8,63,34,0.25)] hover:shadow-premium transition-all duration-500"
+              className="group relative rounded-2xl p-6 bg-white border border-forest/10 hover:border-gold/40 hover:shadow-premium transition-all duration-500 overflow-hidden"
             >
-              <div className="grid sm:grid-cols-5">
-                {/* Image */}
-                <div className="relative sm:col-span-2 aspect-[4/3] sm:aspect-auto overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/70 via-forest-deep/10 to-transparent" />
-                  <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-gradient-gold flex items-center justify-center shadow-gold-glow">
-                    <p.icon className="w-5 h-5 text-forest-deep" />
+              <div className="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-gold/0 group-hover:bg-gold/15 blur-2xl transition-all duration-500" />
+              <div className="relative">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-forest text-gold flex items-center justify-center shadow-premium group-hover:scale-110 transition-transform">
+                    <p.icon className="w-6 h-6" />
                   </div>
-                  <span
-                    className={`absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider border ${STATUS_STYLES[p.status]}`}
-                  >
-                    {p.status}
+                  <span className="font-serif text-3xl text-forest/10 font-bold group-hover:text-gold/25 transition-colors">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-
-                {/* Content */}
-                <div className="sm:col-span-3 p-6 flex flex-col">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-gold-deep font-semibold">
-                    {p.category}
-                  </div>
-                  <h3 className="mt-2 font-serif text-lg text-forest font-semibold leading-snug group-hover:text-forest-deep transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-forest/65 leading-relaxed flex-1">
-                    {p.desc}
-                  </p>
-
-                  {/* Progress */}
-                  <div className="mt-4">
-                    <div className="flex items-center justify-between text-xs mb-1.5">
-                      <span className="font-medium text-forest/70">Progress</span>
-                      <span className="font-bold text-forest">{p.progress}%</span>
-                    </div>
-                    <div className="h-2 rounded-full bg-forest/8 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${p.progress}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.1, ease: "easeOut", delay: 0.2 }}
-                        className="h-full bg-gradient-gold rounded-full relative"
-                      >
-                        <span className="absolute inset-0 animate-shimmer opacity-60" />
-                      </motion.div>
-                    </div>
-                    <div className="mt-2 text-[11px] text-forest/60 font-medium">
-                      {p.funding}
-                    </div>
-                  </div>
-
-                  {/* Donation CTA */}
-                  <a
-                    href="#sponsorship"
-                    className="mt-4 inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-full bg-forest/5 hover:bg-forest text-forest hover:text-cream transition-colors text-xs font-semibold uppercase tracking-wide"
-                  >
-                    <span className="flex items-center gap-1.5">
-                      <HandCoins className="w-3.5 h-3.5" />
-                      Donate to this project
-                    </span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
+                <h5 className="font-serif text-base sm:text-lg text-forest font-semibold leading-tight">
+                  {p.title}
+                </h5>
+                <p className="mt-2 text-sm text-forest/70 leading-relaxed">
+                  {p.text}
+                </p>
               </div>
-            </motion.article>
+            </motion.div>
           ))}
         </StaggerGroup>
-
-        <Reveal delay={0.2}>
-          <div className="mt-14 grid sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
-            {[
-              { label: "Total Funds Mobilised", value: "GHS 4.6M+" },
-              { label: "Projects Completed", value: "12" },
-              { label: "Lives Impacted", value: "18,000+" },
-            ].map((s) => (
-              <div
-                key={s.label}
-                className="rounded-2xl bg-gradient-forest p-6 text-center text-cream shadow-premium"
-              >
-                <div className="font-serif text-3xl sm:text-4xl font-bold text-gradient-gold">
-                  {s.value}
-                </div>
-                <div className="mt-1 text-xs uppercase tracking-wider text-cream/70">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-
-        {/* Proposed Legacy Projects */}
-        <div className="mt-24">
-          <Reveal>
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
-                <Award className="w-3.5 h-3.5 text-gold" />
-                10th Anniversary Legacy
-              </div>
-              <h3 className="mt-5 font-serif text-3xl sm:text-4xl text-forest font-bold">
-                Proposed Legacy Projects
-              </h3>
-              <p className="mt-4 text-forest/70 max-w-2xl mx-auto text-sm sm:text-base">
-                To ensure the anniversary leaves a lasting impact, the Planning
-                Committee may undertake one or more of the following:
-              </p>
-            </div>
-          </Reveal>
-
-          <StaggerGroup className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {LEGACY_PROJECTS.map((p, i) => (
-              <motion.div
-                key={p.title}
-                variants={staggerItem}
-                className="group relative rounded-2xl p-6 bg-white border border-forest/10 hover:border-gold/40 hover:shadow-premium transition-all duration-500 overflow-hidden"
-              >
-                <div className="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-gold/0 group-hover:bg-gold/15 blur-2xl transition-all duration-500" />
-                <div className="relative">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-forest text-gold flex items-center justify-center shadow-premium group-hover:scale-110 transition-transform">
-                      <p.icon className="w-6 h-6" />
-                    </div>
-                    <span className="font-serif text-3xl text-forest/10 font-bold group-hover:text-gold/25 transition-colors">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h5 className="font-serif text-base sm:text-lg text-forest font-semibold leading-tight">
-                    {p.title}
-                  </h5>
-                  <p className="mt-2 text-sm text-forest/70 leading-relaxed">
-                    {p.text}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </StaggerGroup>
-        </div>
       </div>
     </SectionShell>
   );
