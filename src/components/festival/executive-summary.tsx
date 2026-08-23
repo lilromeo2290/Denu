@@ -378,7 +378,7 @@ export function ExecutiveSummary() {
                 { k: "Edition", v: "10th Anniversary · 2027" },
                 { k: "Festival Dates", v: "26 – 29 November 2027" },
                 { k: "Host Community", v: "Denu, Ketu South Municipality, Volta Region" },
-                { k: "Organising Body", v: "Some Traditional Area & Festival Secretariat" },
+                { k: "Organising Body", v: "Denu Electoral Area & Festival Secretariat" },
                 { k: "Theme", v: "Celebrating a Decade of Unity, Heritage and Sustainable Development" },
                 { k: "Primary Audience", v: "Denu community, Volta Region, diaspora, tourists" },
                 { k: "Strategic Partners", v: "Government, NGOs, corporate sponsors, diaspora networks" },

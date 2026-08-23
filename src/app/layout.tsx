@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Grand Durbar",
   ],
   authors: [{ name: "Denu Nugoryiyi Za Festival Secretariat" }],
-  creator: "Some Traditional Area",
+  creator: "Denu Electoral Area",
   publisher: "Denu Nugoryiyi Za Festival Secretariat",
   metadataBase: new URL("https://denunugoryiyiza.gh"),
   alternates: { canonical: "/" },
@@ -109,7 +109,7 @@ const structuredData = {
   },
   organizer: {
     "@type": "Organization",
-    name: "Some Traditional Area",
+    name: "Denu Electoral Area",
     url: "https://denunugoryiyiza.gh",
     logo: "https://denunugoryiyiza.gh/logo-full.png",
   },
