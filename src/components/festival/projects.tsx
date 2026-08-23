@@ -2,124 +2,15 @@
 
 import { motion } from "framer-motion";
 import {
-  School,
-  HeartPulse,
-  Route,
-  Droplets,
-  Briefcase,
-  Flower2,
-  Palmtree,
-  Leaf,
-  HandCoins,
-  ArrowUpRight,
   Library,
   GraduationCap,
   Stethoscope,
   Building2,
   MapPin,
-  Award,
 } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import { SectionShell } from "./gold-button";
-import { Reveal, StaggerGroup, staggerItem } from "./reveal";
-
-const PROJECTS = [
-  {
-    icon: School,
-    title: "Denu Community Senior High School Block",
-    category: "Schools",
-    status: "In Progress",
-    progress: 68,
-    image:
-      "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 1.2M raised of GHS 1.8M",
-    desc: "A six-classroom block with science laboratory and ICT centre serving 400 students from Denu and surrounding communities.",
-  },
-  {
-    icon: HeartPulse,
-    title: "Denu CHPS Compound Upgrade",
-    category: "Health Facilities",
-    status: "Completed",
-    progress: 100,
-    image:
-      "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 480K fully funded",
-    desc: "Upgraded Community Health Planning compound with maternity ward, dispensary and 24/7 emergency capacity.",
-  },
-  {
-    icon: Route,
-    title: "Denu–Aflao Coastal Road Resurfacing",
-    category: "Roads",
-    status: "Planned",
-    progress: 18,
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 950K of GHS 4.2M",
-    desc: "12 km of resurfaced coastal road connecting Denu to Aflao, improving trade, tourism and emergency access.",
-  },
-  {
-    icon: Droplets,
-    title: "Agbedrafo Borehole & Reticulation",
-    category: "Water Projects",
-    status: "In Progress",
-    progress: 75,
-    image:
-      "https://images.unsplash.com/photo-1541252260730-0412e8e2108e?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 320K of GHS 420K",
-    desc: "Solar-powered borehole and 5 km reticulation network bringing clean water to 3,500 residents.",
-  },
-  {
-    icon: Briefcase,
-    title: "Youth Skills & ICT Centre",
-    category: "Youth Employment",
-    status: "In Progress",
-    progress: 52,
-    image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 580K of GHS 1.1M",
-    desc: "Vocational training in carpentry, fashion, coding and digital marketing for 250 youth per year.",
-  },
-  {
-    icon: Flower2,
-    title: "Women in Trade Micro-Grant Programme",
-    category: "Women Empowerment",
-    status: "Ongoing",
-    progress: 84,
-    image:
-      "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 240K disbursed of GHS 300K",
-    desc: "Micro-grants and business mentorship for 180 women traders, food processors and artisans across Denu.",
-  },
-  {
-    icon: Palmtree,
-    title: "Denu Beach Tourism Promenade",
-    category: "Tourism Development",
-    status: "Planned",
-    progress: 22,
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 410K of GHS 1.9M",
-    desc: "A 1.4 km beachfront promenade with kiosks, seating, lighting and an open-air amphitheatre.",
-  },
-  {
-    icon: Leaf,
-    title: "Coastal Mangrove Restoration",
-    category: "Environmental Conservation",
-    status: "Ongoing",
-    progress: 47,
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80",
-    funding: "GHS 180K of GHS 380K",
-    desc: "Restoring 25 hectares of mangrove ecosystem and training 60 youth as eco-rangers.",
-  },
-];
-
-const STATUS_STYLES: Record<string, string> = {
-  Completed: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30",
-  "In Progress": "bg-gold/15 text-gold border-gold/30",
-  Planned: "bg-blue-400/15 text-blue-300 border-blue-400/30",
-  Ongoing: "bg-amber-400/15 text-amber-300 border-amber-400/30",
-};
+import { StaggerGroup, staggerItem } from "./reveal";
 
 const LEGACY_PROJECTS = [
   {
