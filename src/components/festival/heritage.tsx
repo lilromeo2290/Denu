@@ -20,7 +20,7 @@ const BLOCKS = [
   {
     icon: ScrollText,
     eyebrow: "History of Denu",
-    title: "A coastal town shaped by trade, faith and tradition",
+    title: "Hedzranawo Slavery Market",
     body: "Denu sits on the south-eastern coastline of Ghana in the Ketu South Municipality of the Volta Region, a short distance from the Aflao border with Togo. For generations it has been a meeting point — of Ewe clans, of traders travelling the coast, of Christian missions and of fishermen casting nets into the Gulf of Guinea. The story of Denu is one of resilience: a small coastal community that has grown into a vibrant commercial and cultural hub while holding firmly to the customs that define its people.",
     image:
       "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&q=80",
