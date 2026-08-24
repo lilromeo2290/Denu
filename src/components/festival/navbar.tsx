@@ -14,7 +14,6 @@ const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Sponsorship & Budget", href: "#sponsorship-budget" },
   { label: "Heritage", href: "#heritage" },
-  { label: "Visit Denu", href: "#tourism" },
   { label: "Schedule", href: "#schedule" },
   { label: "Gallery", href: "#gallery" },
   { label: "News", href: "#news" },
@@ -71,7 +70,7 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {NAV_LINKS.slice(0, 8).map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -81,24 +80,6 @@ export function Navbar() {
                 <span className="absolute left-3 right-3 -bottom-0.5 h-px bg-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </a>
             ))}
-            <div className="relative group">
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-cream/85 hover:text-gold transition-colors">
-                More <ChevronDown className="w-3.5 h-3.5" />
-              </button>
-              <div className="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="glass-card rounded-xl p-2 min-w-[160px] shadow-premium">
-                  {NAV_LINKS.slice(8).map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      className="block px-3 py-2 text-sm text-cream/85 hover:text-gold hover:bg-white/5 rounded-lg transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
           </nav>
 
           {/* CTA + mobile toggle */}
