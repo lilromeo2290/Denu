@@ -150,7 +150,7 @@ const BLOCKS = [
     icon: Crown,
     eyebrow: "Chiefs & Queen Mothers",
     title: "Hedzranawo Museum",
-    body: "The chieftaincy of Denu is the spiritual and cultural authority of the community. Under the leadership of the Paramount Chief and supported by divisional chiefs and queen mothers, the institution preserves peace, mediates disputes, safeguards customs and represents the people on matters of tradition and development. Queen mothers — the Mamas — hold a special place, advising the chiefs, championing women and children, and ensuring the wisdom of the ancestors is passed to the next generation. At the grand durbar, the full majesty of this institution is on display.",
+    body: "",
     image:
       "https://images.unsplash.com/photo-1591030413653-79c4cb1d8d0f?auto=format&fit=crop&w=1200&q=80",
     flip: true,
