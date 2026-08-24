@@ -17,8 +17,6 @@ const NAV_LINKS = [
   { label: "Schedule", href: "#schedule" },
   { label: "Gallery", href: "#gallery" },
   { label: "News", href: "#news" },
-  { label: "Sponsors", href: "#sponsors" },
-  { label: "Register", href: "#register" },
   { label: "Contact", href: "#contact" },
 ];
 
