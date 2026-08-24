@@ -14,7 +14,6 @@ const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Sponsorship & Budget", href: "#sponsorship-budget" },
   { label: "Heritage", href: "#heritage" },
-  { label: "Schedule", href: "#schedule" },
   { label: "Gallery", href: "#gallery" },
   { label: "News", href: "#news" },
   { label: "Contact", href: "#contact" },
