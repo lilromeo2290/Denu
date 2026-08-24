@@ -40,68 +40,94 @@ import { useToast } from "@/hooks/use-toast";
 const PACKAGES = [
   {
     icon: Crown,
-    name: "Platinum",
-    amount: "GHS 100,000+",
+    name: "Platinum (Title Sponsor)",
+    amount: "GH₵100,000.00",
     color: "from-slate-200 to-slate-400",
     badge: "text-slate-700",
     ring: "ring-slate-300/40",
-    popular: false,
+    popular: true,
+    sponsoredEvents: [
+      "Nugoryiyi Za WaveFest",
+      "Nugoryiyi Za StepFest",
+      "Media Publicity and Coverage",
+    ],
     benefits: [
-      "Title sponsor of the Grand Durbar",
-      "Premium logo placement on all festival assets",
-      "10 VIP passes & 50 general passes",
-      "Speaking slot at the Business Forum",
-      "Dedicated social media campaign",
-      "Booth at the festival expo",
+      "Extensive brand visibility through banners, flyers, T-shirts, stage backdrops, souvenirs, and all official promotional materials.",
+      "Recognition throughout the festival, including mentions during the opening and closing ceremonies, interviews, advertisements, and event announcements.",
+      "Wide media exposure across television, radio, newspapers, blogs, social media, livestreams, and other digital platforms.",
+      "Direct access to thousands of attendees, with opportunities to showcase products and services, engage potential customers, and launch new offerings.",
+      "Strong online presence through the festival's social media channels, media partners, and digital marketing campaigns.",
+      "Participation in all key festival activities, including cultural exhibitions, trade fairs, health outreaches, educational programs, and community development initiatives.",
+      "Long-term brand association with one of Denu's premier cultural and development festivals, demonstrating commitment to unity, cultural heritage, and sustainable community development.",
     ],
   },
   {
     icon: Medal,
-    name: "Gold",
-    amount: "GHS 50,000 – 99,999",
+    name: "Gold Sponsor",
+    amount: "GH₵65,000.00",
     color: "from-amber-200 to-amber-500",
     badge: "text-amber-700",
     ring: "ring-amber-400/40",
-    popular: true,
+    popular: false,
+    sponsoredEvents: [
+      "Corporate and Fun Games",
+      "Street Fashion Runway",
+      "Nugoryiyi Za Cooking Contest",
+      "Icons Gala",
+    ],
     benefits: [
-      "Co-sponsor of a flagship event",
-      "Logo on festival banners & website",
-      "6 VIP passes & 30 general passes",
-      "Booth at the festival expo",
-      "Feature in festival newsletter",
-      "Social media features",
+      "Prominent brand visibility on selected festival banners, flyers, stage backdrops, T-shirts, and official promotional materials.",
+      "Recognition during the opening and closing ceremonies, selected advertisements, and major event announcements.",
+      "Media exposure through television, radio, social media, livestreams, and selected digital platforms.",
+      "Opportunity to exhibit products and services and interact with festival attendees.",
+      "Featured on the festival's social media platforms and selected digital marketing campaigns.",
+      "Participation in selected festival activities such as cultural exhibitions, trade fairs, and community development initiatives.",
+      "Brand association with the festival and its commitment to community development.",
     ],
   },
   {
     icon: Award,
-    name: "Silver",
-    amount: "GHS 20,000 – 49,999",
+    name: "Silver Sponsor",
+    amount: "GH₵55,000.00",
     color: "from-zinc-200 to-zinc-400",
     badge: "text-zinc-700",
     ring: "ring-zinc-300/40",
     popular: false,
+    sponsoredEvents: [
+      "Trash-to-Change Exercise",
+      "Kids Playground",
+      "Quiz Competition",
+      "Skills Training",
+    ],
     benefits: [
-      "Sponsor of a community project",
-      "Logo on festival website",
-      "3 VIP passes & 20 general passes",
-      "Booth at the festival expo",
-      "Social media mention",
+      "Logo placement on selected promotional materials, banners, and event signage.",
+      "Recognition during selected festival announcements and acknowledgements.",
+      "Exposure through the festival's social media platforms and selected digital promotions.",
+      "Opportunity to display promotional materials or products at designated festival areas.",
+      "Participation in selected cultural and community engagement activities.",
+      "Association with the Denu Nugoryiyi Zà Festival and its development agenda.",
     ],
   },
   {
     icon: Heart,
-    name: "Community Partner",
-    amount: "GHS 5,000 – 19,999",
-    color: "from-rose-200 to-rose-400",
-    badge: "text-rose-700",
-    ring: "ring-rose-300/40",
+    name: "Bronze Sponsor",
+    amount: "GH₵42,000.00",
+    color: "from-amber-700 to-amber-900",
+    badge: "text-amber-100",
+    ring: "ring-amber-700/40",
     popular: false,
+    sponsoredEvents: [
+      "Arrival and Cultural Night",
+      "Beyond the High",
+      "Nugoryiyi Za Health Screening",
+      "Nugoryiyi Za Donation Drive",
+    ],
     benefits: [
-      "Support a community initiative",
-      "Logo on the partners page",
-      "2 VIP passes & 10 general passes",
-      "Acknowledgement at events",
-      "Social media thank-you",
+      "Logo placement on selected festival promotional materials.",
+      "Acknowledgement during the festival and on selected social media platforms.",
+      "Opportunity to distribute promotional materials during the festival.",
+      "Limited participation in selected festival activities.",
+      "Recognition as an official supporter of the Denu Nugoryiyi Zà Festival and its mission of promoting unity, culture, and sustainable community development.",
     ],
   },
 ];
@@ -356,38 +382,71 @@ export function SponsorshipBudget() {
             </div>
           </Reveal>
 
-          <StaggerGroup className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <StaggerGroup className="mt-12 grid md:grid-cols-2 gap-6">
             {PACKAGES.map((p) => (
               <motion.div
                 key={p.name}
                 variants={staggerItem}
-                className={`relative rounded-3xl glass-card p-6 sm:p-7 flex flex-col ${
+                className={`relative rounded-3xl glass-card p-6 sm:p-8 flex flex-col ${
                   p.popular ? "ring-2 ring-gold" : ""
                 }`}
               >
                 {p.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-gold text-forest text-[10px] font-bold uppercase tracking-wider shadow-gold-glow whitespace-nowrap">
-                    Most Popular
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-gold text-forest text-[10px] font-bold uppercase tracking-wider shadow-gold-glow whitespace-nowrap">
+                    Title Sponsor · Most Popular
                   </div>
                 )}
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center shadow-premium`}>
-                  <p.icon className={`w-7 h-7 ${p.badge}`} />
+                <div className="flex items-center gap-4">
+                  <div className={`shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${p.color} flex items-center justify-center shadow-premium`}>
+                    <p.icon className={`w-7 h-7 ${p.badge}`} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-serif text-xl sm:text-2xl text-cream font-semibold leading-tight">
+                      {p.name}
+                    </h4>
+                    <div className="mt-1 text-lg font-bold text-gradient-gold">
+                      {p.amount}
+                    </div>
+                  </div>
                 </div>
-                <h4 className="mt-5 font-serif text-2xl text-cream font-semibold">{p.name}</h4>
-                <div className="mt-1 text-sm font-semibold text-gold">{p.amount}</div>
-                <ul className="mt-5 space-y-2.5 flex-1">
-                  {p.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-2 text-sm text-cream/75">
-                      <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
+
+                {/* Sponsored Events */}
+                <div className="mt-6">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-gold/80 font-bold mb-2.5">
+                    Sponsored Events
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {p.sponsoredEvents.map((e) => (
+                      <span
+                        key={e}
+                        className="px-3 py-1.5 rounded-full bg-white/8 border border-gold/20 text-cream/85 text-xs font-medium"
+                      >
+                        {e}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Package Benefits */}
+                <div className="mt-6 flex-1">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-gold/80 font-bold mb-3">
+                    Package Benefits
+                  </div>
+                  <ul className="space-y-2.5">
+                    {p.benefits.map((b) => (
+                      <li key={b} className="flex items-start gap-2 text-sm text-cream/75 leading-relaxed">
+                        <Check className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <a
                   href="#sponsorship"
                   className="mt-6 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-gradient-gold text-forest font-semibold uppercase tracking-wide text-xs shadow-gold-glow hover:scale-105 transition-transform"
                 >
-                  Choose {p.name}
+                  Choose {p.name.split(" ")[0]}
                   <ChevronRight className="w-3.5 h-3.5" />
                 </a>
               </motion.div>
