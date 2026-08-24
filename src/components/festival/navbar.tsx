@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "2027 Road maps", href: "#roadmap" },
   { label: "Projects", href: "#projects" },
+  { label: "Sponsorship & Budget", href: "#sponsorship-budget" },
   { label: "Heritage", href: "#heritage" },
   { label: "Visit Denu", href: "#tourism" },
   { label: "Schedule", href: "#schedule" },

@@ -8,6 +8,7 @@ import { About } from "@/components/festival/about";
 import { Highlights } from "@/components/festival/highlights";
 import { Roadmap } from "@/components/festival/roadmap";
 import { Projects } from "@/components/festival/projects";
+import { SponsorshipBudget } from "@/components/festival/sponsorship-budget";
 import { Heritage } from "@/components/festival/heritage";
 import { Tourism } from "@/components/festival/tourism";
 import { Schedule } from "@/components/festival/schedule";
@@ -34,6 +35,7 @@ export default function Home() {
         <Highlights />
         <Roadmap />
         <Projects />
+        <SponsorshipBudget />
         <Heritage />
         <Tourism />
         <Schedule />
