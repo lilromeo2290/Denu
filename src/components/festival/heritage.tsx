@@ -38,7 +38,7 @@ const BLOCKS = [
   {
     icon: Shirt,
     eyebrow: "Traditional Attire & Cuisine",
-    title: "Woven cloth, kente, and the flavours of the Volta",
+    title: "Togo - Aflao Border",
     body: "The people of Denu dress with pride — kente and ewe woven cloth for ceremonial occasions, white for festivals of purification, gold and red for the durbar. The cuisine of the festival is a celebration in itself: akple with okro soup, red-red, fried yam with tilapia, abolo with one-man-thousand fish, fresh coconut and palm wine. Every meal tells a story of the land, the sea and the hands that prepared it.",
     image:
       "https://images.unsplash.com/photo-1604908554007-fe9473c06f83?auto=format&fit=crop&w=1200&q=80",
