@@ -20,6 +20,17 @@ import {
   Sparkles,
   Building2,
   FileText,
+  Trash2,
+  Shirt,
+  Footprints,
+  HandHeart,
+  Mountain,
+  Moon,
+  GraduationCap,
+  Brain,
+  CookingPot,
+  Baby,
+  Package,
 } from "lucide-react";
 import { SectionHeading } from "./section-heading";
 import { SectionShell } from "./gold-button";
@@ -97,92 +108,186 @@ const PACKAGES = [
 
 const BUDGET_CATEGORIES = [
   {
-    icon: Megaphone,
-    name: "Launch & Publicity",
+    icon: Trash2,
+    name: "Clean Up Exercise",
+    amount: "GH₵5,000.00",
     items: [
-      "Press conference & media engagement",
-      "Anniversary logo & branding",
-      "Promotional materials (banners, flyers, social media)",
-      "Radio & TV coverage",
+      "Hoes",
+      "Brooms",
+      "Shovels",
+      "Water",
+      "Gloves",
     ],
-    allocation: "15%",
-    amount: "GHS 150,000",
+  },
+  {
+    icon: Shirt,
+    name: "Street Fashion Runway",
+    amount: "GH₵15,000.00",
+    items: [
+      "Venue",
+      "Lighting",
+      "Models",
+      "P.A. System",
+    ],
+  },
+  {
+    icon: Megaphone,
+    name: "Media",
+    amount: "GH₵20,000.00",
+    items: [
+      "Radio announcement",
+      "Radio and TV tour",
+      "Posters and banners",
+      "Hand bills",
+      "Photography and videography",
+      "Live streaming of events",
+      "Red/Green carpet",
+    ],
   },
   {
     icon: Music4,
-    name: "Cultural Events & Performances",
+    name: "Nugoryiyi Za WaveFest",
+    amount: "GH₵70,000.00",
     items: [
-      "Cultural procession & performances",
-      "Fashion Runway & homecoming procession",
-      "Live musical concert (WaveFest)",
-      "Traditional food exhibition & Cooking Contest",
+      "Food and drinks fair",
+      "Artistes",
+      "Exhibition",
+      "Stage, lighting and sound system",
     ],
-    allocation: "25%",
-    amount: "GHS 250,000",
+  },
+  {
+    icon: Footprints,
+    name: "Nugoryiyi Za StepFest",
+    amount: "GH₵10,000.00",
+    items: [
+      "Vehicles",
+      "P.A./Sound system",
+      "Refreshment of medical team",
+      "Transport of medical team",
+      "Invited guest (accommodation and refreshment)",
+    ],
+  },
+  {
+    icon: HandHeart,
+    name: "Nugoryiyi Za Donations Drive",
+    amount: "GH₵20,000.00",
+    items: [
+      "Food and drinks",
+      "Toiletries",
+      "Clothing",
+    ],
+  },
+  {
+    icon: Mountain,
+    name: "Beyond The High",
+    amount: "GH₵10,000.00",
+    items: [
+      "Venue",
+      "Donation of items",
+      "Resource personnels",
+      "Handbills",
+    ],
+  },
+  {
+    icon: Moon,
+    name: "Arrival Night / Cultural Performance",
+    amount: "GH₵7,000.00",
+    items: [
+      "Bonfire",
+      "Borbor night",
+      "Homecoming procession",
+    ],
   },
   {
     icon: Trophy,
-    name: "Sports & Recreation",
+    name: "Corporate & Fun Games",
+    amount: "GH₵20,000.00",
     items: [
-      "Football gala & athletics",
-      "Cycling event & indoor games",
-      "Health walk (Stepfest)",
-      "Beyond The High expedition",
+      "Football and jerseys",
+      "Sound system",
+      "Basketball",
+      "Paint ball",
+      "Football video game",
+      "Indoor games",
     ],
-    allocation: "12%",
-    amount: "GHS 120,000",
   },
   {
-    icon: Users,
-    name: "Youth & Educational Programmes",
+    icon: GraduationCap,
+    name: "Nugoryiyi Za Skills Training and Youth Summit",
+    amount: "GH₵25,000.00",
     items: [
-      "Skills Training workshops",
-      "Youth Summit",
-      "Quiz Competition",
-      "Educational outreach in schools",
+      "Venue",
+      "Learning materials",
+      "Rental of tables and chairs",
+      "Standby generator",
+      "Paraphernalias",
+      "Refreshments",
     ],
-    allocation: "10%",
-    amount: "GHS 100,000",
+  },
+  {
+    icon: Brain,
+    name: "Quiz Competition (JHS & SHS)",
+    amount: "GH₵20,000.00",
+    items: [
+      "P.A. system",
+      "Rentals of tents and chairs",
+      "Prizes for winners (1st, 2nd and 3rd positions)",
+      "Refreshments",
+      "Quiz masters",
+    ],
+  },
+  {
+    icon: CookingPot,
+    name: "Nugoryiyi-Za Cooking Contest",
+    amount: "GH₵10,000.00",
+    items: [
+      "P.A. system",
+      "Food items",
+      "Cooking utensils",
+      "Canopies, chairs and tables",
+    ],
+  },
+  {
+    icon: Award,
+    name: "Icons of Denu Gala Night",
+    amount: "GH₵20,000.00",
+    items: [
+      "Venue",
+      "Chairs",
+      "Tables",
+      "Sound system",
+      "Plaques and citations",
+      "Decoration",
+      "Refreshments",
+    ],
+  },
+  {
+    icon: Baby,
+    name: "Kid's Playground",
+    amount: "GH₵5,000.00",
+    items: [
+      "Rental of items",
+    ],
   },
   {
     icon: Stethoscope,
-    name: "Health & Social Interventions",
+    name: "Health Screening",
+    amount: "GH₵5,000.00",
     items: [
-      "Community Health Screening",
-      "Donations to schools, hospitals & vulnerable groups",
-      "Community clean-up (Trash-to-Change)",
-      "Interdenominational thanksgiving service",
+      "Canopies",
+      "Transportations",
+      "Refreshments",
     ],
-    allocation: "13%",
-    amount: "GHS 130,000",
   },
   {
-    icon: Sparkles,
-    name: "Gala Night & Awards",
-    items: [
-      "Icons of Denu Gala Night",
-      "Awards & recognition packages",
-      "Venue, catering & hospitality",
-      "Photography & documentation",
-    ],
-    allocation: "15%",
-    amount: "GHS 150,000",
-  },
-  {
-    icon: Building2,
-    name: "Legacy Projects",
-    items: [
-      "Community library construction/renovation",
-      "Scholarship scheme for needy students",
-      "Renovation of public facilities",
-      "Street signs & community monuments",
-    ],
-    allocation: "10%",
-    amount: "GHS 100,000",
+    icon: Package,
+    name: "Miscellaneous",
+    amount: "GH₵8,000.00",
+    items: [],
   },
 ];
 
-const TOTAL_BUDGET = "GHS 1,000,000";
+const TOTAL_BUDGET = "GH₵270,000.00";
 
 export function SponsorshipBudget() {
   const { toast } = useToast();
@@ -214,7 +319,7 @@ export function SponsorshipBudget() {
             {[
               { label: "Total Budget", value: TOTAL_BUDGET, icon: Calculator },
               { label: "Sponsorship Tiers", value: "4", icon: Award },
-              { label: "Budget Categories", value: "7", icon: FileText },
+              { label: "Budget Categories", value: "16", icon: FileText },
               { label: "Expected Attendees", value: "25K+", icon: Users },
             ].map((s) => (
               <div
@@ -302,9 +407,9 @@ export function SponsorshipBudget() {
                 Budget Breakdown
               </h3>
               <p className="mt-4 text-cream/70 max-w-2xl mx-auto text-sm sm:text-base">
-                A transparent allocation of the anniversary budget across seven
-                key programme areas — ensuring every contribution drives
-                measurable impact.
+                A transparent line-by-line allocation of the 2027 anniversary
+                budget across sixteen programme areas — ensuring every
+                contribution drives measurable impact.
               </p>
             </div>
           </Reveal>
@@ -347,8 +452,8 @@ export function SponsorshipBudget() {
                     className="p-6 sm:p-7 hover:bg-white/5 transition-colors"
                   >
                     <div className="grid lg:grid-cols-12 gap-4 items-start">
-                      {/* Icon + name + allocation */}
-                      <div className="lg:col-span-4 flex items-start gap-3">
+                      {/* Icon + name + amount */}
+                      <div className="lg:col-span-5 flex items-start gap-3">
                         <div className="shrink-0 w-12 h-12 rounded-xl bg-gradient-gold text-forest-deep flex items-center justify-center shadow-gold-glow">
                           <cat.icon className="w-6 h-6" />
                         </div>
@@ -356,11 +461,8 @@ export function SponsorshipBudget() {
                           <h4 className="font-serif text-lg text-cream font-semibold leading-tight">
                             {cat.name}
                           </h4>
-                          <div className="mt-1 flex items-center gap-2">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-gold/15 text-gold text-[10px] font-bold uppercase tracking-wider border border-gold/25">
-                              {cat.allocation}
-                            </span>
-                            <span className="text-cream/70 text-xs font-semibold">
+                          <div className="mt-1.5">
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-gold/15 text-gold text-xs font-bold tracking-wide border border-gold/25">
                               {cat.amount}
                             </span>
                           </div>
@@ -368,29 +470,22 @@ export function SponsorshipBudget() {
                       </div>
 
                       {/* Items */}
-                      <div className="lg:col-span-8">
-                        <ul className="grid sm:grid-cols-2 gap-2">
-                          {cat.items.map((item) => (
-                            <li key={item} className="flex items-start gap-2 text-xs sm:text-sm text-cream/75">
-                              <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0 mt-2" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      <div className="lg:col-span-7">
+                        {cat.items.length > 0 ? (
+                          <ul className="grid sm:grid-cols-2 gap-2">
+                            {cat.items.map((item) => (
+                              <li key={item} className="flex items-start gap-2 text-xs sm:text-sm text-cream/75">
+                                <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0 mt-2" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-xs sm:text-sm text-cream/50 italic">
+                            General contingency and unforeseen expenses
+                          </p>
+                        )}
                       </div>
-                    </div>
-
-                    {/* Progress bar */}
-                    <div className="mt-4 h-1.5 rounded-full bg-white/8 overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: cat.allocation }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                        className="h-full bg-gradient-gold rounded-full relative"
-                      >
-                        <span className="absolute inset-0 animate-shimmer opacity-60" />
-                      </motion.div>
                     </div>
                   </motion.div>
                 ))}
