@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-INTERVAL_SECONDS=120   # 2 minutes — fast feedback for every update
+INTERVAL_SECONDS=300   # 5 minutes — avoids hitting Vercel's 100 deploys/day free-tier limit
 SYNC_SCRIPT="/home/z/my-project/scripts/sync-github.sh"
 DAEMON_LOG="/home/z/my-project/scripts/sync-daemon.log"
 PIDFILE="/home/z/my-project/scripts/sync-daemon.pid"

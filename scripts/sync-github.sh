@@ -90,6 +90,18 @@ behind=$(git rev-list --count "HEAD..origin/${BRANCH}" 2>/dev/null || echo "0")
 if (( ahead > 0 )); then
   if git push origin "$BRANCH" >> "$WORKLOG" 2>&1; then
     log "[push] pushed ${ahead} commit(s) to origin/${BRANCH}"
+    # --- Only deploy to Vercel when there are NEW commits ---
+    # (Previous "deploy every cycle" approach hit Vercel's free-tier limit of
+    # 100 deploys/day. Now we only deploy when something actually changed.)
+    DEPLOY_SCRIPT="$PROJECT_DIR/scripts/deploy-vercel.sh"
+    if [[ -x "$DEPLOY_SCRIPT" ]]; then
+      log "[deploy] triggering vercel production deploy…"
+      if "$DEPLOY_SCRIPT" >> "$WORKLOG" 2>&1; then
+        log "[deploy] vercel deploy completed"
+      else
+        log "[warn] vercel deploy failed — github push still succeeded"
+      fi
+    fi
   else
     log "[error] push failed — will retry next cycle"
     exit 1
@@ -104,19 +116,6 @@ elif (( behind > 0 )); then
   fi
 else
   log "[info] in sync with origin/${BRANCH}"
-fi
-
-# --- ALWAYS trigger Vercel deploy after every cycle ---
-# This ensures production site always reflects local code, even when no
-# new commits were made (e.g. after a `git pull` or asset-only changes).
-DEPLOY_SCRIPT="$PROJECT_DIR/scripts/deploy-vercel.sh"
-if [[ -x "$DEPLOY_SCRIPT" ]]; then
-  log "[deploy] triggering vercel production deploy…"
-  if "$DEPLOY_SCRIPT" >> "$WORKLOG" 2>&1; then
-    log "[deploy] vercel deploy completed"
-  else
-    log "[warn] vercel deploy failed — github sync still succeeded"
-  fi
 fi
 
 log "── sync end ──"
