@@ -207,13 +207,13 @@ export function About() {
         />
 
         {/* Story grid — opening narrative with image */}
-        <div className="mt-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="mt-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center lg:[&>div:first-child]:order-2">
           <Reveal>
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-[4/5] sm:aspect-[5/4]">
                 <img
-                  src="https://images.unsplash.com/photo-1591030413653-79c4cb1d8d0f?auto=format&fit=crop&w=1200&q=80"
-                  alt="Ewe chief in colourful regalia at a Ghanaian durbar"
+                  src="/homecoming.jpg"
+                  alt="Aerial view of the Denu Nugoryiyi Zà homecoming gathering with colourful tents and crowds under palm trees"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
