@@ -200,7 +200,7 @@ export function ExecutiveSummary() {
             <Reveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10 mb-5">
                 <Sparkles className="w-3.5 h-3.5 text-gold" />
-                About the Festival
+                Festival Overview
               </div>
               <p className="text-forest/85 leading-relaxed text-base sm:text-lg">
                 <strong className="text-forest">Denu Nugoryiyi Zà</strong> is the
@@ -248,7 +248,7 @@ export function ExecutiveSummary() {
                   <Eye className="w-5 h-5" />
                 </div>
                 <h3 className="font-serif text-2xl sm:text-3xl text-forest font-bold">
-                  Our Vision
+                  Strategic Vision 2027
                 </h3>
               </div>
               <p className="text-forest/85 leading-relaxed text-base">
