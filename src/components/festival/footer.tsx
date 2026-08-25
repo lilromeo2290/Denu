@@ -193,7 +193,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="font-semibold text-gold hover:text-gold-yellow transition-colors"
               >
-                CLIPE233 ENGINEERS
+                CLIPE CONSULT
               </a>
             </p>
             <button
