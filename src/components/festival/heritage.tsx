@@ -25,17 +25,30 @@ const SLAVERY_SLIDES = [
   "/slavery/slavery-4.jpg",
 ];
 
-function SlaverySlider({ flip }: { flip: boolean }) {
+const BORDER_SLIDES = [
+  "/border/border-1.jpg",
+  "/border/border-2.jpg",
+  "/border/border-3.jpg",
+];
+
+interface ImageSliderProps {
+  slides: string[];
+  altPrefix: string;
+  icon: React.ComponentType<{ className?: string }>;
+  flip: boolean;
+}
+
+function ImageSlider({ slides, altPrefix, icon: Icon, flip }: ImageSliderProps) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
   const next = useCallback(
-    () => setActive((p) => (p + 1) % SLAVERY_SLIDES.length),
-    []
+    () => setActive((p) => (p + 1) % slides.length),
+    [slides.length]
   );
   const prev = useCallback(
-    () => setActive((p) => (p - 1 + SLAVERY_SLIDES.length) % SLAVERY_SLIDES.length),
-    []
+    () => setActive((p) => (p - 1 + slides.length) % slides.length),
+    [slides.length]
   );
 
   useEffect(() => {
@@ -54,8 +67,8 @@ function SlaverySlider({ flip }: { flip: boolean }) {
         <AnimatePresence mode="wait">
           <motion.img
             key={active}
-            src={SLAVERY_SLIDES[active]}
-            alt={`Hedzranawo Slavery Market — view ${active + 1}`}
+            src={slides[active]}
+            alt={`${altPrefix} — view ${active + 1}`}
             initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.02 }}
@@ -69,7 +82,7 @@ function SlaverySlider({ flip }: { flip: boolean }) {
 
         {/* Slide counter badge */}
         <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full glass-card text-cream text-xs font-semibold uppercase tracking-wider">
-          {active + 1} / {SLAVERY_SLIDES.length}
+          {active + 1} / {slides.length}
         </div>
 
         {/* Pause indicator */}
@@ -97,7 +110,7 @@ function SlaverySlider({ flip }: { flip: boolean }) {
 
         {/* Dots */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
-          {SLAVERY_SLIDES.map((_, i) => (
+          {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
@@ -122,7 +135,7 @@ function SlaverySlider({ flip }: { flip: boolean }) {
           flip ? "-left-4 sm:-left-6" : "-right-4 sm:-right-6"
         } -bottom-4 sm:-bottom-6 w-20 h-20 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold-glow z-10`}
       >
-        <ScrollText className="w-9 h-9 text-forest-deep" />
+        <Icon className="w-9 h-9 text-forest-deep" />
       </motion.div>
 
       {/* Decorative frame */}
@@ -204,10 +217,22 @@ export function Heritage() {
                 b.flip ? "lg:[&>div:first-child]:order-2" : ""
               }`}
             >
-              {/* Image (or slider for the first block) */}
+              {/* Image (slider for blocks 0 and 2; static image for blocks 1 and 3) */}
               <Reveal y={40}>
                 {idx === 0 ? (
-                  <SlaverySlider flip={b.flip} />
+                  <ImageSlider
+                    slides={SLAVERY_SLIDES}
+                    altPrefix="Hedzranawo Slavery Market"
+                    icon={ScrollText}
+                    flip={b.flip}
+                  />
+                ) : idx === 2 ? (
+                  <ImageSlider
+                    slides={BORDER_SLIDES}
+                    altPrefix="Togo - Aflao Border"
+                    icon={Shirt}
+                    flip={b.flip}
+                  />
                 ) : (
                   <div className="relative">
                     <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-[4/3]">
