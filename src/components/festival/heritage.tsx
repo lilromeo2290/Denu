@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ScrollText,
-  Crown,
   Users,
   Shirt,
   UtensilsCrossed,
@@ -152,20 +151,11 @@ const BLOCKS = [
   {
     icon: ScrollText,
     eyebrow: "History of Denu",
-    title: "Hedzranawo Slavery Market",
+    title: "Hedzranawo Slavery Market and Museum",
     body: "",
     image:
       "https://images.unsplash.com/photo-1568430462989-44163eb1752f?auto=format&fit=crop&w=1200&q=80",
     flip: false,
-  },
-  {
-    icon: Crown,
-    eyebrow: "Chiefs & Queen Mothers",
-    title: "Hedzranawo Museum",
-    body: "",
-    image:
-      "https://images.unsplash.com/photo-1591030413653-79c4cb1d8d0f?auto=format&fit=crop&w=1200&q=80",
-    flip: true,
   },
   {
     icon: Shirt,
@@ -174,7 +164,7 @@ const BLOCKS = [
     body: "",
     image:
       "https://images.unsplash.com/photo-1604908554007-fe9473c06f83?auto=format&fit=crop&w=1200&q=80",
-    flip: false,
+    flip: true,
   },
   {
     icon: Drum,
@@ -217,16 +207,16 @@ export function Heritage() {
                 b.flip ? "lg:[&>div:first-child]:order-2" : ""
               }`}
             >
-              {/* Image (slider for blocks 0 and 2; static image for blocks 1 and 3) */}
+              {/* Image (slider for blocks 0 and 1; static image for block 2) */}
               <Reveal y={40}>
                 {idx === 0 ? (
                   <ImageSlider
                     slides={SLAVERY_SLIDES}
-                    altPrefix="Hedzranawo Slavery Market"
+                    altPrefix="Hedzranawo Slavery Market and Museum"
                     icon={ScrollText}
                     flip={b.flip}
                   />
-                ) : idx === 2 ? (
+                ) : idx === 1 ? (
                   <ImageSlider
                     slides={BORDER_SLIDES}
                     altPrefix="Togo - Aflao Border"
