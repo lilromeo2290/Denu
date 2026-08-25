@@ -56,27 +56,28 @@ export function Hero() {
         <AnimatePresence mode="sync">
           <motion.div
             key={active}
-            initial={{ opacity: 0, scale: 1.06 }}
+            initial={{ opacity: 0, scale: 1.04 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.02 }}
+            exit={{ opacity: 0, scale: 1.01 }}
             transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 bg-cover bg-center"
+            // bg-cover + bg-center: fills the full screen on desktop
+            // On mobile, bg-contain (added via sm: prefix on the parent) shows the whole photo
+            className="absolute inset-0 bg-cover bg-center sm:bg-center"
             style={{ backgroundImage: `url('${HERO_SLIDES[active]}')` }}
             aria-hidden
           />
         </AnimatePresence>
 
-        {/* Bottom fade for smooth transition into next section */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/25 to-transparent" />
-        {/* Left-side gradient ONLY — keeps hero text legible while letting the photos show on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/85 via-forest-deep/30 to-transparent" />
-        {/* Gold radial accents */}
-        <div className="absolute -top-1/4 -right-1/4 w-[60vw] h-[60vw] rounded-full bg-gold/12 blur-[120px] animate-glow-pulse" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-[50vw] h-[50vw] rounded-full bg-forest-light/25 blur-[120px]" />
+        {/* Subtle bottom fade only — for smooth transition into next section */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-transparent to-transparent" />
+        {/* Soft left-side gradient — only strong enough to keep the text readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/75 via-forest-deep/10 to-transparent" />
+        {/* Subtle dark vignette at top so navbar text is readable without hiding the photo */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-forest-deep/60 to-transparent" />
       </div>
 
       {/* Floating particles */}
-      <Particles count={32} />
+      <Particles count={20} />
 
       {/* Slide navigation arrows */}
       <button
@@ -123,7 +124,7 @@ export function Hero() {
       {/* Festival logo watermark — large, faint, top-right */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.1, scale: 1 }}
+        animate={{ opacity: 0.06, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.6 }}
         className="absolute top-24 right-4 sm:right-10 lg:right-16 w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 pointer-events-none z-[5]"
         aria-hidden
@@ -152,7 +153,7 @@ export function Hero() {
           >
             Denu
             <br />
-            <span className="text-gradient-gold">Nugoryiyi Za</span>
+            <span className="text-gradient-gold text-shadow-gold">Nugoryiyi Za</span>
           </motion.h1>
 
           <motion.p
