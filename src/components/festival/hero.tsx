@@ -1,9 +1,23 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ChevronRight, Calendar, MapPin, Users, Sparkles } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight, Calendar, MapPin, Users, Sparkles, ChevronLeft } from "lucide-react";
 import { Particles } from "./particles";
 import { FestivalLogo } from "./festival-logo";
+
+const HERO_SLIDES = [
+  "/hero/hero-01.jpg",
+  "/hero/hero-02.jpg",
+  "/hero/hero-03.jpg",
+  "/hero/hero-04.jpg",
+  "/hero/hero-05.jpg",
+  "/hero/hero-06.jpg",
+  "/hero/hero-07.jpg",
+  "/hero/hero-08.jpg",
+  "/hero/hero-09.jpg",
+  "/hero/hero-10.jpg",
+];
 
 const STATS = [
   { icon: Users, label: "Annual Visitors", value: "25K+" },
@@ -12,39 +26,106 @@ const STATS = [
 ];
 
 export function Hero() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const next = useCallback(
+    () => setActive((p) => (p + 1) % HERO_SLIDES.length),
+    []
+  );
+  const prev = useCallback(
+    () => setActive((p) => (p - 1 + HERO_SLIDES.length) % HERO_SLIDES.length),
+    []
+  );
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setInterval(next, 5000);
+    return () => clearInterval(t);
+  }, [paused, next]);
+
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-forest-deep"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
     >
-      {/* Cinematic background image with slow zoom */}
+      {/* Cinematic background slider */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 animate-slow-zoom bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('/hero-festival.jpg')",
-          }}
-          aria-hidden
-        />
-        {/* Subtle bottom fade for ground/transition into next section */}
-        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/15 to-transparent" />
-        {/* Left-side gradient ONLY — keeps text legible while letting the photo show on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/85 via-forest-deep/35 to-transparent" />
-        {/* Gold radial accent */}
-        <div className="absolute -top-1/4 -right-1/4 w-[60vw] h-[60vw] rounded-full bg-gold/15 blur-[120px] animate-glow-pulse" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-[50vw] h-[50vw] rounded-full bg-forest-light/30 blur-[120px]" />
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={active}
+            initial={{ opacity: 0, scale: 1.06 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url('${HERO_SLIDES[active]}')` }}
+            aria-hidden
+          />
+        </AnimatePresence>
+
+        {/* Bottom fade for smooth transition into next section */}
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-deep via-forest-deep/25 to-transparent" />
+        {/* Left-side gradient ONLY — keeps hero text legible while letting the photos show on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/85 via-forest-deep/30 to-transparent" />
+        {/* Gold radial accents */}
+        <div className="absolute -top-1/4 -right-1/4 w-[60vw] h-[60vw] rounded-full bg-gold/12 blur-[120px] animate-glow-pulse" />
+        <div className="absolute -bottom-1/4 -left-1/4 w-[50vw] h-[50vw] rounded-full bg-forest-light/25 blur-[120px]" />
       </div>
 
       {/* Floating particles */}
-      <Particles count={36} />
+      <Particles count={32} />
+
+      {/* Slide navigation arrows */}
+      <button
+        onClick={prev}
+        aria-label="Previous slide"
+        className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-card text-cream flex items-center justify-center hover:bg-gold hover:text-forest transition-colors"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next slide"
+        className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full glass-card text-cream flex items-center justify-center hover:bg-gold hover:text-forest transition-colors"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Slide counter + dots (bottom-right, above kente strip) */}
+      <div className="absolute bottom-10 right-4 sm:right-8 z-20 flex flex-col items-end gap-2.5">
+        <div className="glass-card rounded-full px-3.5 py-1.5 text-cream text-xs font-semibold tracking-wider">
+          <span className="text-gradient-gold font-bold">{String(active + 1).padStart(2, "0")}</span>
+          <span className="text-cream/50 mx-1">/</span>
+          <span className="text-cream/70">{String(HERO_SLIDES.length).padStart(2, "0")}</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          {HERO_SLIDES.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all ${
+                active === i
+                  ? "w-7 bg-gradient-gold"
+                  : "w-1.5 bg-cream/40 hover:bg-cream/70"
+              }`}
+            />
+          ))}
+        </div>
+        {paused && (
+          <div className="text-gold text-[10px] uppercase tracking-wider font-bold">Paused</div>
+        )}
+      </div>
 
       {/* Festival logo watermark — large, faint, top-right */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 0.12, scale: 1 }}
+        animate={{ opacity: 0.1, scale: 1 }}
         transition={{ duration: 1.5, delay: 0.6 }}
-        className="absolute top-24 right-4 sm:right-10 lg:right-16 w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 pointer-events-none"
+        className="absolute top-24 right-4 sm:right-10 lg:right-16 w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 pointer-events-none z-[5]"
         aria-hidden
       >
         <FestivalLogo variant="transparent" size={288} className="w-full h-full" />
