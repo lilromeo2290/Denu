@@ -13,12 +13,10 @@ import { Heritage } from "@/components/festival/heritage";
 import { Tourism } from "@/components/festival/tourism";
 import { Schedule } from "@/components/festival/schedule";
 import { Gallery } from "@/components/festival/gallery";
-import { News } from "@/components/festival/news";
 import { Sponsors } from "@/components/festival/sponsors";
 import { Sponsorship } from "@/components/festival/sponsorship";
 import { Registration } from "@/components/festival/registration";
 import { Countdown } from "@/components/festival/countdown";
-import { Testimonials } from "@/components/festival/testimonials";
 import { Social } from "@/components/festival/social";
 import { Contact } from "@/components/festival/contact";
 import { Footer } from "@/components/festival/footer";
@@ -40,12 +38,10 @@ export default function Home() {
         <Tourism />
         <Schedule />
         <Gallery />
-        <News />
         <Sponsors />
         <Sponsorship />
         <Countdown />
         <Registration />
-        <Testimonials />
         <Social />
         <Contact />
       </main>
