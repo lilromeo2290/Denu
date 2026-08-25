@@ -313,59 +313,32 @@ export function About() {
           </div>
         </Reveal>
 
-        {/* Alternating image/text narrative blocks */}
-        <div className="mt-20 space-y-20 lg:space-y-28">
+        {/* Alternating text-only narrative blocks */}
+        <div className="mt-20 space-y-14 lg:space-y-20">
           {NARRATIVE_BLOCKS.slice(2).map((b) => (
             <div
               key={b.title}
-              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${
-                b.flip ? "lg:[&>div:first-child]:order-2" : ""
-              }`}
+              className="mx-auto max-w-4xl"
             >
-              {/* Image */}
-              <Reveal y={40}>
-                <div className="relative">
-                  <div className="relative rounded-3xl overflow-hidden shadow-premium aspect-[4/3]">
-                    <img
-                      src={b.image}
-                      alt={b.title}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-forest-deep/50 via-transparent to-transparent" />
-                  </div>
-                  {/* Floating icon badge */}
-                  <motion.div
-                    initial={{ scale: 0, rotate: -20 }}
-                    whileInView={{ scale: 1, rotate: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: 0.3, type: "spring" }}
-                    className={`absolute ${
-                      b.flip ? "-left-4 sm:-left-6" : "-right-4 sm:-right-6"
-                    } -bottom-4 sm:-bottom-6 w-20 h-20 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold-glow`}
-                  >
-                    <b.icon className="w-9 h-9 text-forest-deep" />
-                  </motion.div>
-                  {/* Decorative frame */}
-                  <div
-                    className={`absolute ${
-                      b.flip ? "-right-3 -top-3" : "-left-3 -top-3"
-                    } w-28 h-28 border-2 border-gold/30 rounded-3xl -z-10`}
-                  />
-                </div>
-              </Reveal>
-
               {/* Text */}
-              <Reveal delay={0.15} y={40}>
-                <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
-                    <b.icon className="w-3.5 h-3.5 text-gold" />
-                    {b.eyebrow}
+              <Reveal y={30}>
+                <div className="relative rounded-3xl bg-white p-7 sm:p-9 shadow-[0_10px_30px_-15px_rgba(8,63,34,0.25)] border border-forest/8 overflow-hidden">
+                  {/* Decorative gold accent corner */}
+                  <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
+                  <div className="relative">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/8 text-forest text-[11px] font-semibold uppercase tracking-[0.2em] border border-forest/10">
+                      <b.icon className="w-3.5 h-3.5 text-gold" />
+                      {b.eyebrow}
+                    </div>
+                    <h3 className="mt-5 font-serif text-2xl sm:text-3xl lg:text-4xl text-forest font-semibold leading-tight">
+                      {b.title}
+                    </h3>
+                    {b.body && (
+                      <p className="mt-5 text-forest/75 leading-relaxed">{b.body}</p>
+                    )}
                   </div>
-                  <h3 className="mt-5 font-serif text-2xl sm:text-3xl lg:text-4xl text-forest font-semibold leading-tight">
-                    {b.title}
-                  </h3>
-                  <p className="mt-5 text-forest/75 leading-relaxed">{b.body}</p>
+                  {/* Gold accent line at bottom */}
+                  <div className="mt-6 h-px bg-gradient-to-r from-gold/60 via-gold/20 to-transparent" />
                 </div>
               </Reveal>
             </div>
