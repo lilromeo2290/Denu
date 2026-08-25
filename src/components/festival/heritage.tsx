@@ -9,7 +9,6 @@ import {
   Shirt,
   UtensilsCrossed,
   Drum,
-  Quote,
   Languages,
   CalendarHeart,
   ChevronLeft,
@@ -168,7 +167,7 @@ const BLOCKS = [
     icon: Drum,
     eyebrow: "Drumming, Dancing & Proverbs",
     title: "The heartbeat of Ewe culture",
-    body: "The drums of Denu speak a language older than words. Atsimenu, sogo, kidi and kaganu call the community to gather, to mourn, to celebrate and to dance. Agbadza — the iconic Ewe dance — moves generations in unison, while Borborbor brings joy to every gathering. Beside the drums sit the elders, speaking in proverbs: “Nye devi la ɖo eƒe ŋuti” — even a small child carries their own destiny. Through language, music and proverb, the wisdom of the ancestors lives on in the young.",
+    body: "",
     image:
       "https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&fit=crop&w=1200&q=80",
     flip: true,
@@ -254,19 +253,6 @@ export function Heritage() {
                   </h3>
                   {b.body && (
                     <p className="mt-5 text-cream/75 leading-relaxed">{b.body}</p>
-                  )}
-
-                  {/* Proverb callout */}
-                  {idx === 3 && (
-                    <div className="mt-6 p-5 rounded-2xl glass-card flex items-start gap-3">
-                      <Quote className="w-6 h-6 text-gold shrink-0 mt-0.5" />
-                      <p className="text-cream/85 italic text-sm leading-relaxed">
-                        “Dzᴐdze mesᴐ na ame si wᴐa eƒe agbe o” — Patience does
-                        not fail the one who lives well. A reminder that the
-                        heritage we carry is built on time, discipline and
-                        grace.
-                      </p>
-                    </div>
                   )}
                 </div>
               </Reveal>
