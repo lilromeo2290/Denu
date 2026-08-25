@@ -141,7 +141,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-gold text-xs sm:text-sm font-semibold uppercase tracking-[0.28em]"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            Annual Cultural Festival • Denu, Ghana
+            Annual Development Festival • Denu, Ghana
           </motion.div>
 
           <motion.h1
@@ -166,17 +166,6 @@ export function Hero() {
             Development{" "}
             <span className="text-gold font-medium">•</span> Connecting
             Generations
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.7 }}
-            className="mt-4 text-base text-cream/65 max-w-xl leading-relaxed"
-          >
-            The grand assembly of the chiefs, queen mothers and people of Denu —
-            a celebration of Ewe heritage, community progress, tourism and
-            traditional leadership on the coast of the Volta Region.
           </motion.p>
 
           {/* CTAs */}
