@@ -188,7 +188,7 @@ export function Footer() {
             <p className="text-xs text-cream/60">
               Powered and Designed by{" "}
               <a
-                href="https://clipe233eng.net"
+                href="https://clipeconsult.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-gold hover:text-gold-yellow transition-colors"
